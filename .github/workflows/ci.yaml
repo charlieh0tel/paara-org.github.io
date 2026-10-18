@@ -15,24 +15,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  test-parse-script:
-    name: Test parse-past-meetings.sh
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
+  test-new-meeting:
+    name: Test new-meeting
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Test parse-past-meetings.sh
+      - name: Create a meeting, then confirm a second run refuses
         run: |
-          chmod +x script/parse-past-meetings.sh
-          script/parse-past-meetings.sh > /tmp/meetings-output.md
-          # Verify output contains expected content
-          if ! grep -q "## Past Meetings" /tmp/meetings-output.md; then
-            echo "Error: Output missing expected '## Past Meetings' header"
+          script/new-meeting 209901
+          test -f meetings/2099/209901.md
+          test -f _includes/raffle/209901.md
+          if script/new-meeting 209901; then
+            echo "Error: second run should refuse to overwrite"
             exit 1
           fi
-          echo "✓ parse-past-meetings.sh executed successfully on ${{ matrix.os }}"
 
   test-sync-photos:
     name: Test sync-photos.go
@@ -48,7 +44,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: script/cibuild
-    needs: [test-parse-script, test-sync-photos]
+    needs: [test-new-meeting, test-sync-photos]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

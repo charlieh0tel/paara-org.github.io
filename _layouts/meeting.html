@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{%- include find-meetings.html -%}
+{%- for m in meetings -%}
+  {%- if m.path == page.path -%}
+    {%- assign newer_index = forloop.index0 | minus: 1 -%}
+    {%- assign older_index = forloop.index0 | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if newer_index >= 0 %}{% assign newer = meetings[newer_index] %}{% endif -%}
+{%- assign older = meetings[older_index] -%}
+{% capture header %}
+# {{ page.title }}
+
+{% include meeting-facts.md meeting=page %}{% if next_is_upcoming and next_meeting.path == page.path %}{% include zoom-details.md %}{% endif %}
+{% endcapture %}
+{{ header | markdownify }}
+{{ content }}
+<hr>
+<nav class="meeting-nav" aria-label="Meetings">
+  <p>
+    {% if older %}<a href="{{ older.url | relative_url }}" rel="prev">&larr; {{ older.path | split: "/" | last | slice: 0, 6 }}</a> &middot; {% endif %}
+    <a href="{{ '/meetings.html#past-meetings' | relative_url }}">All meetings</a>
+    {% if newer %} &middot; <a href="{{ newer.url | relative_url }}" rel="next">{{ newer.path | split: "/" | last | slice: 0, 6 }} &rarr;</a>{% endif %}
+  </p>
+</nav>

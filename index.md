@@ -2,11 +2,15 @@
 layout: default
 ---
 
-{% include meeting-short.md %}{% include zoom-details.md %}
+{% include next-meeting.md %}
 
-For more information, visit the [meetings page](/meetings.html).
+For more about our meetings, visit the [meetings page](/meetings.html).
 
-{% include raffle.md %}
+{% if next_meeting.raffle -%}
+{%- assign raffle_ym = next_meeting.path | split: "/" | last | slice: 0, 6 -%}
+{%- capture raffle_file %}raffle/{{ raffle_ym }}.md{% endcapture -%}
+{% include {{ raffle_file }} %}
+{%- endif %}
 
 ---
 

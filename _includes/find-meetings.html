@@ -1,0 +1,25 @@
+{%- comment -%}
+  Sets, for the page that includes it:
+    meetings          all meeting pages, newest first
+    next_meeting      the earliest meeting dated today or later, or the newest
+                      meeting if none is
+    next_is_upcoming  whether next_meeting is today or later
+    today             the build date as YYYYMMDD
+  The site rebuilds on every push, so "today" is the date of the last push.
+{%- endcomment -%}
+{%- assign meetings = site.pages | where: "layout", "meeting" | sort: "path" | reverse -%}
+{%- assign today = site.time | date: "%Y%m%d" -%}
+{%- assign next_meeting = nil -%}
+{%- assign next_is_upcoming = false -%}
+{%- for m in meetings -%}
+  {%- if m.date -%}
+    {%- assign d = m.date | date: "%Y%m%d" -%}
+    {%- if d >= today -%}
+      {%- assign next_meeting = m -%}
+      {%- assign next_is_upcoming = true -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if next_meeting == nil -%}
+  {%- assign next_meeting = meetings.first -%}
+{%- endif -%}

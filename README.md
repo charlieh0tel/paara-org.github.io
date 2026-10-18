@@ -6,57 +6,59 @@ Club members are encouraged to help file Issues for the problems encountered on 
 
 This page acts mainly as a HowTo for other contributors. The old readme is now at [ARCHITECT.md](ARCHITECT.md).
 
-## How to add a new meeting?
+## How meeting pages work
 
-1. Modify the meeting skeleton to add: 
-   * topic
-   * presenter
-   * details
-   * Zoom meeting details
-   * example at <https://github.com/PAARA-org/paara-org.github.io/blob/master/meetings/2025/202506.md?plain=1>
+Each monthly meeting has its own page, `meetings/YYYY/YYYYMM.md`. The meeting details live in the page's front matter (the block between the `---` lines at the top):
 
-2. Upload an image (optional) and render it inline
-3. Modify `_includes/meeting-short.md` to include the same details (this will be rendered on the first page)
-   * example at <https://github.com/PAARA-org/paara-org.github.io/blob/41e09eb62eccab82d7b528a0111cd3cf2c46dceb/_includes/meeting-short.md?plain=1>
-
-### How to add Zoom meeting details
-
-Add zoom meeting link and phone dial number to the `_includes/meeting-short.md` as in the example below::
-
-```markdown
-## Next club meeting
-* **Date**: `6 June 2025`
-* **Topic**: `The Legacy of Trans-Pacific Radio`
-* **Presenter**: `Richard Dillman (W6AWO)`
-* **Zoom Meeting**:
-   * <https://us02web.zoom.us/j/81572645379>
-   * <+16699006833,,81572645379#> US (San Jose)
+```yaml
+---
+layout: meeting
+title: "November Monthly Meeting"
+date: 2026-11-06
+topic: "Scalable Phased Arrays with QuadRF"
+presenter: "Roy Gross KM6EOO"
+raffle: true
+---
 ```
 
-## What to do after a monthly meeting ends? Rollover to a new month!
+Everything else is generated from it:
 
-Run the `./script/rollover-to-next-month.sh` script from the top repository location which will generate an output similar to this:
+* the meeting page header (date, time, topic, presenter, and the Zoom details for the upcoming meeting)
+* the **Next club meeting** box and raffle on the homepage, and the top of the [meetings page](https://paara.org/meetings.html)
+* the **Past Meetings** archive on the meetings page, including the "with video" tags
+
+The "next meeting" is the earliest meeting whose `date` is today or later. The site is rebuilt on every push, so after a meeting it moves on to the next one the next time anything is pushed.
+
+Optional fields:
+
+* `time:` if the meeting isn't at 07:00 PM Pacific Time
+* `presenter_url:` to link the presenter's name
+* `presenter:` can be a list when there are several presenters
+* `talks:` instead of `topic:`/`presenter:` when there are several talks, as a list of `topic:`/`presenter:` pairs (see `meetings/2026/202610.md`)
+* `topic_details:` a list of sub-points shown under the topic
+
+The Zoom link and dial-in number are in `_includes/zoom-details.md`.
+
+## How to add the next meeting
+
+Run this from the top of the repository, any time after the previous meeting:
 
 ```
-% ./script/rollover-to-next-month.sh
-[ Step 1: Detecting next monthly meeting filename ]
-  File meetings.md exists.
-  Current meeting is for year(2025) month(08). Next meeting is year(2025) month(09).
-[ Step 2: Deleting the current symlink ]
-  Running: 'rm meetings.md' ...DONE
-[ Step 3: Creating the new meeting file if necessary ]
-  The file 'meetings/2025/202509.md' does not exist or is empty. Initializing from meetings/template.md ... DONE
-[ Step 4: Creating the new symlink ]
-  Running: 'ln -s meetings/2025/202509.md meetings.md' ...DONE
-[ Step 5: Updating the _includes/meeting-short.md file ]
-  Successfully updated _includes/meeting-short.md.
-[ Step 6: Updating past meeting history ]
-  Running ./script/parse-past-meetings.sh ...DONE
+% ./script/new-meeting
+Created the December 2026 meeting, dated Friday, December 4, 2026:
+  meetings/2026/202612.md
+  _includes/raffle/202612.md
+  meetings/raffle/2026/202612-1.png
+  ...
 ```
+
+It creates the month after the last meeting held, dated the first Friday, with the topic and presenter "To be announced". If the first Friday is a holiday, change `date:` in the new page. To create a specific month, pass it: `./script/new-meeting 202701`. The script never overwrites existing files, so running it again is harmless.
+
+It needs only Python 3, which macOS and Linux include.
 
 ## What to do when we know the topic and presenter?
 
-Update `meetings/2025/202506.md` and `_includes/meeting-short.md` with the topic and presenter details.
+Edit `topic:` and `presenter:` in the meeting page's front matter, and add the talk description and speaker bio under `## Details`. The homepage picks up the change automatically.
 
 ## How to add presentation materials to a meeting?
 
@@ -82,13 +84,7 @@ The following steps must be followed:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5QrTYcUS4hU?si=ImhnyzMrJMUEigxn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ```
 
-3. Add this code into the particular monthly meeting file, just above the `## Presentation materials` line
-
-4. Regenerate the past meetings index, which will add the video tag to this meeting as well:
-
-```bash
-./script/parse-past-meetings.sh > _includes/meetings-template.md
-```
+3. Add this code into the particular monthly meeting file, just above the `## Presentation materials` line. The meeting is tagged "with video" in the archive automatically.
 
 ## How to add a new newsletter (PAARAgraphs issue) via script
 

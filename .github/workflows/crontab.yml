@@ -32,18 +32,17 @@ jobs:
 
             Each of the main steps can be executed by a different person. For simplicity, I'm just creating a single bug.
 
-            ### Rollover website
-            This requires running the followins script from a *nix machine:
-              `./script/rollover-to-next-month.sh`
+            ### Add next month's meeting
+            If next month's meeting page doesn't exist yet, run `./script/new-meeting` and commit the files it creates.
+            The homepage moves on to the next meeting by itself; nothing else needs updating.
 
             ### Add YouTube video to the last meeting
             1. Upload recording to shared drive
             2. Edit the video
             3. Upload the video to the YT channel
             4. Link the video in the meeting page (see past meetings as examples)
-            5. Run the script to regenerate the index (`./script/parse-past-meetings.sh > _includes/meetings-template.md`)
 
-            Resolve the issue when both the rollover is done, and the YT video is uploaded and linked.
+            Resolve the issue when the next meeting page exists, and the YT video is uploaded and linked.
 
           PINNED: false
           CLOSE_PREVIOUS: false
