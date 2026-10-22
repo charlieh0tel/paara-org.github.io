@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup H: Swiss poster | PAARA</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>try{if(localStorage.getItem("mock-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+:root {
+  --bg: #ffffff; --ink: #000000; --muted: #4a4a4a; --red: #d2232a; --red-text: #b51d23; --grey: #efefef; --on-red: #fff;
+  --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+html[data-theme="dark"] { --bg: #0a0a0a; --ink: #f5f5f5; --muted: #b5b5b5; --red: #d2232a; --red-text: #ff7077; --grey: #1a1a1a; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 var(--font); font-feature-settings: "ss01", "cv11"; }
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--bg); padding: 8px; z-index: 9; }
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 24px; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -.035em; line-height: .95; }
+.label { font-size: 12px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
+
+header { border-bottom: 2px solid var(--ink); }
+header .grid { align-items: center; min-height: 72px; }
+.brand { grid-column: span 4; display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; font-size: 22px; letter-spacing: -.02em; }
+.brand img { width: 44px; height: 44px; }
+html[data-theme="dark"] .brand img { background: #fff; border-radius: 50%; }
+nav.main { grid-column: span 7; }
+nav.main ul { display: flex; flex-wrap: wrap; gap: 0 20px; list-style: none; margin: 0; padding: 0; }
+nav.main a { display: block; padding: 12px 0; font-weight: 600; font-size: 15px; text-decoration: none; }
+nav.main a:hover { color: var(--red-text); text-decoration: underline; }
+.theme { grid-column: span 1; justify-self: end; font: 600 13px var(--font); background: none; border: 2px solid var(--ink); color: var(--ink); padding: 6px 10px; cursor: pointer; min-height: 40px; }
+
+.poster { padding: 56px 0 0; }
+.poster h1 { grid-column: 1 / -1; font-size: clamp(64px, 15vw, 210px); letter-spacing: -.06em; line-height: .82; }
+.poster h1 span { color: var(--red); }
+.poster .sub { grid-column: 1 / span 5; font-size: 22px; line-height: 1.35; margin-top: 28px; font-weight: 500; }
+.morse { grid-column: 7 / -1; align-self: end; display: flex; gap: 22px; align-items: center; margin-top: 28px; flex-wrap: wrap; }
+.morse i { display: inline-block; height: 14px; background: var(--ink); margin-right: 6px; }
+.morse i.d { width: 14px; border-radius: 50%; } .morse i.l { width: 44px; }
+.morse span { white-space: nowrap; }
+
+.meet { margin-top: 56px; background: var(--red); color: var(--on-red); }
+.meet .grid { padding-top: 32px; padding-bottom: 36px; }
+.meet .date { grid-column: span 3; }
+.meet .date b { display: block; font-size: 120px; font-weight: 900; letter-spacing: -.06em; line-height: .8; }
+.meet .date span { font-size: 22px; font-weight: 700; }
+.meet .what { grid-column: span 6; }
+.meet h2 { font-size: clamp(32px, 4vw, 52px); margin: 10px 0 12px; }
+.meet p { margin: 0; font-size: 18px; }
+.meet .go { grid-column: span 3; display: flex; flex-direction: column; gap: 10px; justify-content: flex-end; }
+.meet .go a { display: block; padding: 14px 16px; border: 2px solid #fff; font-weight: 700; text-decoration: none; }
+.meet .go a:first-child { background: #fff; color: #000; }
+.meet .go a::after { content: " →"; }
+
+.cols { padding: 56px 0; border-bottom: 2px solid var(--ink); }
+.col { grid-column: span 4; border-top: 8px solid var(--ink); padding-top: 14px; }
+.col .n { font-size: 64px; font-weight: 900; letter-spacing: -.05em; line-height: 1; color: var(--red-text); }
+.col h3 { font-size: 30px; margin: 8px 0 10px; }
+.col p { margin: 0 0 10px; color: var(--muted); }
+.col a { font-weight: 700; }
+
+.index { padding: 40px 0 56px; }
+.index h2 { grid-column: 1 / span 3; font-size: 40px; }
+.index ol { grid-column: 4 / -1; list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.index li { counter-increment: s; border-top: 1px solid var(--ink); }
+.index li:last-child { border-bottom: 1px solid var(--ink); }
+.index a { display: grid; grid-template-columns: 60px 1fr 1.4fr; gap: 16px; padding: 14px 0; text-decoration: none; align-items: baseline; }
+.index a::before { content: counter(s, decimal-leading-zero); font-weight: 600; color: var(--muted); }
+.index a b { font-size: 26px; letter-spacing: -.02em; }
+.index a span { color: var(--muted); }
+.index a:hover b { color: var(--red-text); }
+
+.photos { padding-bottom: 56px; }
+.photos img { grid-column: span 3; width: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(1) contrast(1.1); display: block; }
+.photos img:first-child { grid-column: span 6; aspect-ratio: auto; height: 100%; filter: none; }
+
+footer { background: var(--ink); color: var(--bg); padding: 28px 0 40px; font-size: 15px; }
+footer .l { grid-column: span 6; } footer .r { grid-column: span 6; justify-self: end; display: flex; gap: 20px; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(4, 1fr); gap: 0 16px; padding: 0 16px; }
+  .brand { grid-column: span 3; } .theme { grid-column: span 1; }
+  nav.main { grid-column: 1 / -1; order: 3; border-top: 1px solid var(--ink); }
+  nav.main ul { gap: 0 14px; }
+  nav.main a { padding: 10px 0; font-size: 14px; }
+  .poster .sub, .morse, .meet .date, .meet .what, .meet .go, .col, .index h2, .index ol { grid-column: 1 / -1; }
+  .meet .date b { font-size: 88px; }
+  .meet .what { margin: 16px 0 20px; }
+  .col { margin-bottom: 32px; }
+  .index ol { margin-top: 16px; }
+  .index a { grid-template-columns: 40px 1fr; }
+  .index a span { grid-column: 2; }
+  .photos img, .photos img:first-child { grid-column: span 2; aspect-ratio: 1; height: auto; }
+  footer .l, footer .r { grid-column: 1 / -1; justify-self: start; }
+  footer .r { margin-top: 10px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="grid">
+  <a class="brand" href="#"><img src="paara-logo.svg" alt="">PAARA</a>
+  <nav class="main" aria-label="Main navigation"><ul>
+    <li><a href="#">About</a></li><li><a href="#">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+    <li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+  </ul></nav>
+  <button class="theme" type="button" aria-pressed="false">Dark</button>
+</div></header>
+
+<main id="main">
+<section class="poster"><div class="grid">
+  <h1>Palo Alto<br>Amateur Radio<br><span>Association.</span></h1>
+  <p class="sub">The friendliest club around, since 1937. A general interest club for hams across the San Francisco Bay Area.</p>
+  <div class="morse" role="img" aria-label="PAARA in Morse code">
+    <span aria-hidden="true"><i class="d"></i><i class="l"></i><i class="l"></i><i class="d"></i></span>
+    <span aria-hidden="true"><i class="d"></i><i class="l"></i></span>
+    <span aria-hidden="true"><i class="d"></i><i class="l"></i></span>
+    <span aria-hidden="true"><i class="d"></i><i class="l"></i><i class="d"></i></span>
+    <span aria-hidden="true"><i class="d"></i><i class="l"></i></span>
+  </div>
+</div></section>
+
+<section class="meet" aria-labelledby="mt"><div class="grid">
+  <div class="date"><span class="label">Next meeting</span><b>06</b><span>November 2026<br>Friday, 7:00 PM</span></div>
+  <div class="what"><span class="label">Talk</span><h2 id="mt">Scalable Phased Arrays with QuadRF</h2><p>Roy Gross KM6EOO. Cubberley Community Center, Palo Alto, and on Zoom.</p></div>
+  <div class="go"><a href="#">Join on Zoom</a><a href="#">Details and raffle</a></div>
+</div></section>
+
+<section class="cols" aria-label="Highlights"><div class="grid">
+  <div class="col"><div class="n">145.230</div><h3>Monday net</h3><p>8:30 PM on N6NFI, (−) offset, 100 Hz tone. Net and swap, every week.</p><a href="#">Nets and repeaters</a></div>
+  <div class="col"><div class="n">1 yr</div><h3>Free for new hams</h3><p>Newly licensed? Your first year of membership is free.</p><a href="#">New hams</a></div>
+  <div class="col"><div class="n">1971</div><h3>PAARAgraphs</h3><p>Every issue of the club newsletter since 1971.</p><a href="#">Read the archive</a></div>
+</div></section>
+
+<section class="index" aria-labelledby="ix"><div class="grid">
+  <h2 id="ix">Index</h2>
+  <ol>
+    <li><a href="#"><b>About</b><span>History, officers, call signs</span></a></li>
+    <li><a href="#"><b>Meetings</b><span>Monthly talks and the raffle</span></a></li>
+    <li><a href="#"><b>Events</b><span>Field Day, PAARA In The Park, flea market</span></a></li>
+    <li><a href="#"><b>On the Air</b><span>Nets, repeaters, POTA and SOTA</span></a></li>
+    <li><a href="#"><b>New Hams</b><span>Getting started</span></a></li>
+    <li><a href="#"><b>Membership</b><span>Join, renew, loaner rigs, donate</span></a></li>
+    <li><a href="#"><b>Resources</b><span>Setup guides, newsletter</span></a></li>
+  </ol>
+</div></section>
+
+<section class="photos" aria-label="Club photos"><div class="grid">
+  <img src="img/park-oct-2026-antenna.jpg" alt="Two young members assembling an antenna at PAARA In The Park, October 2026">
+  <img src="img/uss-hornet-radio-room.jpg" alt="Members operating in the radio room aboard the USS Hornet, August 2025">
+  <img src="img/antenna-party-4.jpg" alt="Members setting up antennas at Antenna Party #4, June 2026">
+</div></section>
+</main>
+
+<footer><div class="grid">
+  <div class="l">© 1937–2026 Palo Alto Amateur Radio Association</div>
+  <div class="r"><a href="#">Contact us</a><a href="#">Loan program</a><a href="#">Donate</a></div>
+</div></footer>
+<script>
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{b.setAttribute("aria-pressed",document.documentElement.dataset.theme==="dark");};set();
+b.addEventListener("click",()=>{const r=document.documentElement,d=r.dataset.theme==="dark";if(d)delete r.dataset.theme;else r.dataset.theme="dark";try{localStorage.setItem("mock-theme",d?"light":"dark")}catch(e){}set();});});
+</script>
+</body>
+</html>

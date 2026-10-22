@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup I: 1937 radio dial | PAARA</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>try{if(localStorage.getItem("mock-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+:root {
+  --bg: #f4ead6; --panel: #fbf5e8; --ink: #2a1d14; --muted: #5e4a3a; --ox: #7d1d22; --ox-text: #7d1d22; --brass: #765614; --brass-light: #d9b866; --line: #cdb88f;
+  --wood: #4a2c1a; --dial: #f8edd0; --dial-ink: #3a2816;
+  --deco: Limelight, "Poiret One", Georgia, serif; --font: "Josefin Sans", Futura, "Century Gothic", sans-serif;
+}
+html[data-theme="dark"] {
+  --bg: #17110c; --panel: #221912; --ink: #f1e4c8; --muted: #c8b392; --ox: #a3262d; --ox-text: #f08a8f; --brass: #d9b866; --brass-light: #f0d68f; --line: #4a3a28;
+  --wood: #0e0906; --dial: #2c2013; --dial-ink: #f3dfae;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.6 var(--font); }
+a { color: var(--ox-text); text-underline-offset: 4px; }
+:focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 16px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--panel); padding: 8px; z-index: 9; }
+h1, h2, h3 { font-family: var(--deco); font-weight: 400; line-height: 1.1; margin: 0; letter-spacing: .02em; }
+.caps { font-size: 13px; letter-spacing: .3em; text-transform: uppercase; font-weight: 600; }
+
+/* Deco header with sunburst rules */
+.top { background: var(--wood); color: #f4e6c4; border-bottom: 4px solid var(--brass); }
+.top .wrap { display: flex; align-items: center; gap: 18px; padding-top: 14px; padding-bottom: 14px; }
+.top .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+.top img { width: 60px; height: 60px; background: #fff; border-radius: 50%; box-shadow: 0 0 0 3px var(--brass-light); }
+.top b { font: 400 30px var(--deco); letter-spacing: .12em; display: block; line-height: 1; }
+.top small { font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: #e6cf98; }
+.theme { margin-left: auto; font: 600 13px var(--font); letter-spacing: .2em; text-transform: uppercase; background: transparent; color: #f4e6c4; border: 1px solid var(--brass-light); padding: 8px 14px; cursor: pointer; min-height: 44px; }
+nav.main { background: var(--panel); border-bottom: 1px solid var(--line); }
+nav.main ul { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; margin: 0 auto; padding: 0 16px; max-width: 1140px; }
+nav.main a { display: block; padding: 12px 16px; color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+nav.main a:hover { color: var(--ox-text); }
+nav.main li + li::before { content: "◆"; color: var(--brass); font-size: 8px; vertical-align: middle; }
+nav.main li { display: flex; align-items: center; }
+
+/* Hero: radio cabinet with dial */
+.hero { display: grid; grid-template-columns: 1fr 1.05fr; gap: 48px; align-items: center; padding: 56px 16px 48px; }
+.hero h1 { font-size: clamp(44px, 6vw, 76px); color: var(--ox-text); }
+.hero .year { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; color: var(--brass); }
+.hero .year::before, .hero .year::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, var(--brass)); }
+.hero .year::after { background: linear-gradient(90deg, var(--brass), transparent); }
+.hero p { color: var(--muted); font-size: 20px; }
+.cabinet { background: linear-gradient(160deg, #6b4127, #3b2213 60%, #2a170c); border-radius: 160px 160px 18px 18px; padding: 34px 28px 26px; box-shadow: 0 24px 48px -20px rgb(40 20 5 / .6), inset 0 2px 0 rgb(255 255 255 / .15); }
+.dialwin { background: radial-gradient(ellipse at 50% 100%, var(--dial) 55%, color-mix(in srgb, var(--dial) 80%, #000) 100%); border-radius: 140px 140px 10px 10px; border: 4px solid var(--brass-light); padding: 10px 10px 6px; }
+.dialwin svg { display: block; width: 100%; height: auto; }
+.knobs { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding: 0 12px; color: #f4e6c4; }
+.knob { width: 54px; height: 54px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f0d68f, #9a7425 60%, #5a4212); box-shadow: 0 4px 8px rgb(0 0 0 / .5); }
+.knobs .tuned { text-align: center; font-size: 13px; letter-spacing: .24em; text-transform: uppercase; }
+.knobs .tuned b { display: block; font: 400 30px var(--deco); letter-spacing: .06em; color: #fff3d0; }
+
+/* Meeting plaque */
+.plaque { margin: 8px auto 56px; max-width: 900px; background: var(--panel); border: 1px solid var(--line); outline: 1px solid var(--line); outline-offset: 6px; padding: 32px 36px; text-align: center; position: relative; }
+.plaque::before, .plaque::after { content: "◆ ◆ ◆"; position: absolute; left: 50%; transform: translateX(-50%); color: var(--brass); font-size: 10px; letter-spacing: .6em; background: var(--bg); padding: 0 12px; }
+.plaque::before { top: -14px; } .plaque::after { bottom: -14px; }
+.plaque h2 { font-size: clamp(30px, 4vw, 44px); margin: 10px 0 8px; }
+.plaque .when { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
+.plaque .who { color: var(--muted); margin: 0 0 18px; }
+.btn { display: inline-flex; align-items: center; min-height: 46px; padding: 10px 22px; margin: 4px; font: 600 14px var(--font); letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border: 1.5px solid var(--ox); color: var(--ox-text); }
+.btn.solid { background: var(--ox); color: #fff6e6; }
+
+/* Fan cards */
+.fans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 56px; }
+.fan { background: var(--panel); border: 1px solid var(--line); padding: 26px 24px 22px; text-align: center; position: relative; overflow: hidden; }
+.fan::before { content: ""; position: absolute; left: 50%; top: -80px; width: 160px; height: 160px; margin-left: -80px; border-radius: 50%; background: repeating-conic-gradient(from 180deg, color-mix(in srgb, var(--brass) 28%, transparent) 0 6deg, transparent 6deg 12deg); }
+.fan h3 { font-size: 28px; margin: 54px 0 8px; position: relative; }
+.fan p { margin: 0 0 10px; color: var(--muted); }
+
+/* Heritage line */
+.heritage { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 36px 0; margin-bottom: 48px; }
+.heritage ol { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 18px 0 0; padding: 0; }
+.heritage li b { display: block; font: 400 40px var(--deco); color: var(--brass); line-height: 1; }
+.heritage li { font-size: 16px; }
+.heritage h2 { text-align: center; font-size: 34px; }
+
+.photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 56px; }
+.photos img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; border: 6px solid var(--panel); outline: 1px solid var(--line); filter: sepia(.25); }
+
+footer { background: var(--wood); color: #e8d6ae; padding: 26px 0 36px; border-top: 4px solid var(--brass); font-size: 15px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+footer a { color: #fff1cc; margin-left: 18px; }
+
+@media (max-width: 880px) {
+  .hero { grid-template-columns: 1fr; padding-top: 32px; gap: 32px; }
+  .fans, .photos { grid-template-columns: 1fr; }
+  .heritage ol { grid-template-columns: 1fr 1fr; }
+  .top small { display: none; }
+  .top b { font-size: 24px; }
+  .top img { width: 46px; height: 46px; }
+  nav.main a { padding: 10px 8px; font-size: 12px; letter-spacing: .12em; }
+  nav.main li + li::before { display: none; }
+  .plaque { padding: 26px 18px; margin-left: 16px; margin-right: 16px; }
+  .cabinet { border-radius: 120px 120px 16px 16px; padding: 24px 18px 20px; }
+  footer a { margin: 0 18px 0 0; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top"><div class="wrap">
+  <a class="brand" href="#"><img src="paara-logo.svg" alt="PAARA logo"><div><b>PAARA</b><small>Palo Alto Amateur Radio Association</small></div></a>
+  <button class="theme" type="button" aria-pressed="false">Evening</button>
+</div></div>
+<nav class="main" aria-label="Main navigation"><ul>
+  <li><a href="#">About</a></li><li><a href="#">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+  <li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+</ul></nav>
+
+<main id="main">
+<div class="wrap hero">
+  <div>
+    <div class="year caps">Established 1937</div>
+    <h1>The friendliest club around</h1>
+    <p>For nearly ninety years, Bay Area hams have gathered as PAARA to talk radio, hear a good presentation, and get on the air. Tune in any Monday night.</p>
+  </div>
+  <figure class="cabinet" style="margin:0" aria-label="Illustration: a vintage radio dial tuned to 145.230 MHz, the club net">
+    <div class="dialwin">
+      <svg viewBox="0 0 400 210" aria-hidden="true">
+        <g fill="none" stroke="currentColor" style="color:var(--dial-ink)">
+          <path d="M30 200 A170 170 0 0 1 370 200" stroke-width="1.5"/>
+          <path d="M60 200 A140 140 0 0 1 340 200" stroke-width="1" opacity=".5"/>
+        </g>
+        <g id="ticks" stroke="currentColor" style="color:var(--dial-ink)"></g>
+        <g font-family="Josefin Sans, sans-serif" font-size="13" font-weight="600" text-anchor="middle" style="fill:var(--dial-ink)" id="nums"></g>
+        <text x="200" y="116" text-anchor="middle" font-family="Limelight, serif" font-size="20" style="fill:var(--dial-ink)">PAARA</text>
+        <text x="200" y="134" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="10" letter-spacing="3" style="fill:var(--dial-ink)">MEGACYCLES</text>
+        <line id="needle" x1="200" y1="200" x2="200" y2="40" stroke="#b0242b" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="200" cy="200" r="10" fill="#9a7425"/>
+      </svg>
+    </div>
+    <div class="knobs" aria-hidden="true"><span class="knob"></span><div class="tuned">Monday 8:30 PM<b>145.230</b>N6NFI · (−) 100 Hz</div><span class="knob"></span></div>
+  </figure>
+</div>
+
+<section class="plaque" aria-labelledby="mt">
+  <span class="caps" style="color:var(--brass)">Next club meeting</span>
+  <h2 id="mt">Scalable Phased Arrays with QuadRF</h2>
+  <p class="when">Friday, 6 November 2026 · 7:00 PM Pacific</p>
+  <p class="who">Presented by Roy Gross KM6EOO · Cubberley Community Center and Zoom</p>
+  <a class="btn solid" href="#">Join on Zoom</a><a class="btn" href="#">Details &amp; raffle</a>
+</section>
+
+<div class="wrap fans">
+  <div class="fan"><h3>New Hams</h3><p>Newly licensed? Your first year of membership is free.</p><a href="#">Start here</a></div>
+  <div class="fan"><h3>On the Air</h3><p>The Monday net, the W6OTX repeaters, POTA and SOTA.</p><a href="#">Tune in</a></div>
+  <div class="fan"><h3>PAARAgraphs</h3><p>The club newsletter, with every issue back to 1971.</p><a href="#">Read the archive</a></div>
+</div>
+
+<section class="heritage" aria-labelledby="hx"><div class="wrap">
+  <h2 id="hx">A long history on the air</h2>
+  <ol>
+    <li><b>1937</b>The club is first formed.</li>
+    <li><b>1956</b>Incorporated as a California nonprofit.</li>
+    <li><b>1971</b>The oldest PAARAgraphs in the archive.</li>
+    <li><b>2006</b>The club station becomes W6ARA.</li>
+  </ol>
+</div></section>
+
+<div class="wrap photos">
+  <img src="img/uss-hornet-radio-room.jpg" alt="Members operating in the radio room aboard the USS Hornet, August 2025">
+  <img src="img/park-oct-2026-antenna.jpg" alt="Two young members assembling an antenna at PAARA In The Park, October 2026">
+  <img src="img/antenna-party-4.jpg" alt="Members setting up antennas at Antenna Party #4, June 2026">
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div>© 1937–2026 Palo Alto Amateur Radio Association</div>
+  <div><a href="#">Contact us</a><a href="#">Loan program</a><a href="#">Donate</a></div>
+</div></footer>
+<script>
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{b.setAttribute("aria-pressed",document.documentElement.dataset.theme==="dark");};set();
+b.addEventListener("click",()=>{const r=document.documentElement,d=r.dataset.theme==="dark";if(d)delete r.dataset.theme;else r.dataset.theme="dark";try{localStorage.setItem("mock-theme",d?"light":"dark")}catch(e){}set();});});
+// Dial: 144-148 across the arc; needle at 145.230.
+(()=>{const ns="http://www.w3.org/2000/svg",t=document.getElementById("ticks"),n=document.getElementById("nums"),cx=200,cy=200,ang=f=>Math.PI*(1-(f-144)/4)*0.86+Math.PI*0.07;
+for(let f=144;f<=148.001;f+=0.1){const a=ang(f),big=Math.abs(f-Math.round(f))<0.01,r1=170,r2=big?150:160,l=document.createElementNS(ns,"line");
+l.setAttribute("x1",cx+r1*Math.cos(a));l.setAttribute("y1",cy-r1*Math.sin(a));l.setAttribute("x2",cx+r2*Math.cos(a));l.setAttribute("y2",cy-r2*Math.sin(a));l.setAttribute("stroke-width",big?2:1);t.appendChild(l);
+if(big){const x=document.createElementNS(ns,"text");x.setAttribute("x",cx+130*Math.cos(a));x.setAttribute("y",cy-130*Math.sin(a)+4);x.textContent=Math.round(f);n.appendChild(x);}}
+const a=ang(145.23),nd=document.getElementById("needle");nd.setAttribute("x2",cx+168*Math.cos(a));nd.setAttribute("y2",cy-168*Math.sin(a));})();
+</script>
+</body>
+</html>

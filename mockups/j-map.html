@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup J: Bay Area map | PAARA</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>try{if(localStorage.getItem("mock-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+:root {
+  --bg: #f6f4ef; --card: #ffffff; --line: #e3ded3; --ink: #1d2322; --muted: #59605e;
+  --red: #c8202a; --red-text: #b01c25; --water: #cfe3ec; --water-line: #9fc3d3; --land: #ece6d8; --hills: #ddd3bd; --road: #ffffff; --label: #3b4442;
+  --font: Manrope, system-ui, sans-serif;
+}
+html[data-theme="dark"] {
+  --bg: #0f1413; --card: #171e1d; --line: #2a3533; --ink: #e8efed; --muted: #a9b6b3;
+  --red: #ff5a62; --red-text: #ff8088; --water: #0f2a38; --water-line: #1f4a5e; --land: #1b2321; --hills: #232d2a; --road: #2b3633; --label: #c6d2cf;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--font); }
+a { color: var(--red-text); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--card); padding: 8px; z-index: 9; }
+h1, h2, h3 { margin: 0; line-height: 1.15; letter-spacing: -.02em; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--red-text); }
+
+header .wrap { display: flex; align-items: center; gap: 20px; padding-top: 14px; padding-bottom: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 800; font-size: 20px; }
+.brand img { width: 44px; height: 44px; }
+html[data-theme="dark"] .brand img { background: #fff; border-radius: 50%; }
+nav.main { margin-left: auto; }
+nav.main ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; gap: 2px; }
+nav.main a { display: block; padding: 8px 12px; border-radius: 999px; color: var(--ink); font-weight: 600; font-size: 15px; text-decoration: none; }
+nav.main a:hover { background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+.theme { font: 600 14px var(--font); background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; cursor: pointer; min-height: 40px; }
+
+.hero { display: grid; grid-template-columns: 1fr 1.5fr; gap: 32px; align-items: stretch; padding: 24px 16px 40px; }
+.intro { display: flex; flex-direction: column; justify-content: center; }
+.intro h1 { font-size: clamp(36px, 4.6vw, 58px); font-weight: 800; margin: 10px 0 14px; }
+.intro p { color: var(--muted); font-size: 19px; margin: 0 0 16px; }
+.mapcard { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 12px; box-shadow: 0 18px 40px -24px rgb(0 0 0 / .35); margin: 0; }
+.mapcard svg { display: block; width: 100%; height: auto; border-radius: 14px; }
+.mapcard figcaption { font-size: 12.5px; color: var(--muted); padding: 8px 6px 2px; }
+.pin circle.halo { fill: var(--red); opacity: .18; }
+.pin circle.dot { fill: var(--red); stroke: var(--card); stroke-width: 3; }
+.pin text.n { fill: #fff; font: 800 14px var(--font); text-anchor: middle; }
+html[data-theme="dark"] .pin text.n { fill: #111; }
+.place { font: 700 15px var(--font); fill: var(--label); }
+.town { font: 600 12px var(--font); fill: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+.wlabel { font: italic 600 15px var(--font); fill: var(--water-line); letter-spacing: .3em; }
+html[data-theme="dark"] .wlabel { fill: #3f7891; }
+
+.legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.legend li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.legend .n { width: 30px; height: 30px; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 14px; }
+html[data-theme="dark"] .legend .n { color: #111; }
+.legend b { display: block; }
+.legend span { font-size: 15px; color: var(--muted); }
+
+.meet { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; background: var(--ink); color: var(--bg); border-radius: 22px; padding: 30px 32px; margin: 0 16px 48px; }
+html[data-theme="dark"] .meet { background: #e8efed; color: #0f1413; }
+.meet .eyebrow { color: #ff8a91; }
+html[data-theme="dark"] .meet .eyebrow { color: #b01c25; }
+.meet h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 8px 0 8px; }
+.meet p { margin: 0; opacity: .85; }
+.meet .facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; align-content: center; font-size: 16px; }
+.meet .facts dt { opacity: .7; } .meet .facts dd { margin: 0; font-weight: 700; }
+.meet .acts { grid-column: 1 / -1; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 20px; border-radius: 999px; font-weight: 700; text-decoration: none; }
+.btn.red { background: #c8202a; color: #fff; }
+.btn.out { box-shadow: inset 0 0 0 2px currentColor; color: inherit; }
+
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 48px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; text-decoration: none; color: var(--ink); display: block; }
+.tile img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.tile div { padding: 14px 16px 16px; }
+.tile b { display: block; font-size: 18px; }
+.tile span { font-size: 14.5px; color: var(--muted); }
+.tile:hover { border-color: var(--red); }
+
+.links { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 56px; }
+.links a { padding: 10px 16px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; }
+.links a:hover { border-color: var(--red); color: var(--red-text); }
+
+footer { border-top: 1px solid var(--line); padding: 24px 0 40px; font-size: 15px; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+footer a { margin-left: 18px; }
+
+@media (max-width: 960px) {
+  header .wrap { flex-wrap: wrap; }
+  nav.main { order: 3; margin-left: 0; width: 100%; }
+  nav.main a { padding: 6px 10px; font-size: 14px; }
+  .theme { margin-left: auto; }
+  .hero, .meet { grid-template-columns: 1fr; }
+  .hero { padding-top: 8px; }
+  .meet { padding: 24px 20px; }
+  .tiles { grid-template-columns: 1fr 1fr; }
+  footer a { margin: 0 18px 0 0; }
+}
+@media (max-width: 520px) { .tiles { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap">
+  <a class="brand" href="#"><img src="paara-logo.svg" alt="">PAARA</a>
+  <nav class="main" aria-label="Main navigation"><ul>
+    <li><a href="#">About</a></li><li><a href="#">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+    <li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+  </ul></nav>
+  <button class="theme" type="button" aria-pressed="false">Dark</button>
+</div></header>
+
+<main id="main">
+<div class="wrap hero">
+  <div class="intro">
+    <span class="eyebrow">Palo Alto Amateur Radio Association</span>
+    <h1>Your local ham radio club, since 1937.</h1>
+    <p>We meet in Palo Alto, operate Field Day on the bay in Menlo Park, and run repeaters from the hills above San Jose.</p>
+    <ol class="legend">
+      <li><span class="n" aria-hidden="true">1</span><div><b>Cubberley Community Center</b><span>4000 Middlefield Road, Palo Alto. Monthly meetings, first Friday.</span></div></li>
+      <li><span class="n" aria-hidden="true">2</span><div><b>Bayfront Park, Menlo Park</b><span>ARRL Field Day, last full weekend of June.</span></div></li>
+      <li><span class="n" aria-hidden="true">3</span><div><b>W6OTX repeaters</b><span>Near Alum Rock Park, about 750 ft. 2 m and 70 cm DMR, 33 cm FM.</span></div></li>
+    </ol>
+  </div>
+  <figure class="mapcard">
+    <svg viewBox="0 0 1000 700" role="img" aria-labelledby="maptitle">
+      <title id="maptitle">Illustrated map of the South Bay showing 1, Cubberley Community Center in Palo Alto; 2, Bayfront Park in Menlo Park; and 3, the W6OTX repeater site near Alum Rock Park in San Jose.</title>
+      <rect width="1000" height="700" style="fill:var(--land)"/>
+      <path d="M700 700 C720 560 780 470 860 400 C920 350 970 330 1000 320 L1000 700 Z" style="fill:var(--hills)"/>
+      <path d="M0 700 C20 560 60 470 70 380 C80 300 40 220 0 160 Z" style="fill:var(--hills)"/>
+      <path d="M0 0 L420 0 C430 70 470 140 500 210 C530 270 570 300 600 330 C590 345 560 350 520 340 C470 330 420 305 360 275 C300 245 250 225 200 195 C140 160 70 110 0 70 Z" style="fill:var(--water);stroke:var(--water-line);stroke-width:2"/>
+      <g style="stroke:var(--road);stroke-width:7;fill:none;stroke-linecap:round">
+        <path d="M60 230 C200 300 330 380 470 430 C620 480 760 470 900 520"/>
+        <path d="M130 140 C250 230 360 320 520 380 C640 420 720 400 820 420"/>
+      </g>
+      <text class="wlabel" x="230" y="90">SAN FRANCISCO BAY</text>
+      <text class="town" x="120" y="250">Redwood City</text>
+      <text class="town" x="300" y="420">Palo Alto</text>
+      <text class="town" x="440" y="500">Mountain View</text>
+      <text class="town" x="640" y="560">San Jose</text>
+      <text class="town" x="560" y="200">Fremont</text>
+      <circle cx="845" cy="425" r="70" style="fill:none;stroke:var(--red);stroke-width:2;stroke-dasharray:6 8;opacity:.6"/>
+      <circle cx="845" cy="425" r="130" style="fill:none;stroke:var(--red);stroke-width:1.5;stroke-dasharray:6 10;opacity:.35"/>
+      <g class="pin" transform="translate(368 361)"><circle class="halo" r="26"/><circle class="dot" r="16"/><text class="n" y="5">1</text></g>
+      <text class="place" x="392" y="352">Cubberley</text>
+      <g class="pin" transform="translate(262 222)"><circle class="halo" r="26"/><circle class="dot" r="16"/><text class="n" y="5">2</text></g>
+      <text class="place" x="286" y="214">Bayfront Park</text>
+      <g class="pin" transform="translate(845 425)"><circle class="halo" r="26"/><circle class="dot" r="16"/><text class="n" y="5">3</text></g>
+      <text class="place" x="760" y="385">Alum Rock</text>
+    </svg>
+    <figcaption>Illustration, not to scale.</figcaption>
+  </figure>
+</div>
+
+<section class="meet" aria-labelledby="mt">
+  <div><span class="eyebrow">Next meeting · at 1 and on Zoom</span><h2 id="mt">Scalable Phased Arrays with QuadRF</h2><p>Roy Gross KM6EOO on a low-cost, open-source phased array SDR.</p></div>
+  <dl class="facts"><dt>Date</dt><dd>Friday, 6 November 2026</dd><dt>Time</dt><dd>7:00 PM Pacific</dd><dt>Place</dt><dd>Cubberley Community Center</dd></dl>
+  <div class="acts"><a class="btn red" href="#">Join on Zoom</a><a class="btn out" href="#">Details &amp; raffle</a></div>
+</section>
+
+<div class="wrap">
+  <h2 style="font-size:28px;margin-bottom:16px">Around the Bay with PAARA</h2>
+  <div class="tiles">
+    <a class="tile" href="#"><img src="img/park-apr-2026-canopies.jpg" alt=""><div><b>PAARA In The Park</b><span>Every spring and autumn.</span></div></a>
+    <a class="tile" href="#"><img src="img/uss-hornet-radio-room.jpg" alt=""><div><b>Field trips</b><span>Like the radio room of the USS Hornet.</span></div></a>
+    <a class="tile" href="#"><img src="img/antenna-party-4.jpg" alt=""><div><b>Antenna parties</b><span>Most recently Antenna Party #4, June 2026.</span></div></a>
+    <a class="tile" href="#"><img src="img/pacificon-2026.jpg" alt=""><div><b>Pacificon</b><span>The club's special event station.</span></div></a>
+  </div>
+  <nav class="links" aria-label="More">
+    <a href="#">Monday net · 145.230</a><a href="#">New hams: first year free</a><a href="#">Join or renew</a><a href="#">Borrow an HF rig</a><a href="#">PAARAgraphs since 1971</a><a href="#">Photos</a>
+  </nav>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div>© 1937–2026 Palo Alto Amateur Radio Association</div>
+  <div><a href="#">Contact us</a><a href="#">Loan program</a><a href="#">Donate</a></div>
+</div></footer>
+<script>
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{b.setAttribute("aria-pressed",document.documentElement.dataset.theme==="dark");};set();
+b.addEventListener("click",()=>{const r=document.documentElement,d=r.dataset.theme==="dark";if(d)delete r.dataset.theme;else r.dataset.theme="dark";try{localStorage.setItem("mock-theme",d?"light":"dark")}catch(e){}set();});});
+</script>
+</body>
+</html>

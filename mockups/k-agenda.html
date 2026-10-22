@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup K: Agenda | PAARA</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>try{if(localStorage.getItem("mock-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+:root {
+  --bg: #ffffff; --side: #f5f5f3; --line: #e4e4e0; --ink: #1b1b1b; --muted: #5c5c58;
+  --red: #c8202a; --red-text: #b01c25; --red-soft: #fdecec; --net: #1f5f8b; --net-soft: #e7f0f7;
+  --font: "IBM Plex Sans", system-ui, sans-serif;
+}
+html[data-theme="dark"] {
+  --bg: #121212; --side: #1a1a1a; --line: #2e2e2e; --ink: #ececec; --muted: #a9a9a4;
+  --red: #ff5a62; --red-text: #ff8088; --red-soft: #3a1a1c; --net: #7fb6e0; --net-soft: #16293a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 var(--font); }
+a { color: var(--red-text); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--bg); padding: 8px; z-index: 9; }
+h1, h2, h3 { margin: 0; line-height: 1.2; }
+
+.app { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+aside { background: var(--side); border-right: 1px solid var(--line); padding: 24px 20px; display: flex; flex-direction: column; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+.brand img { width: 48px; height: 48px; }
+html[data-theme="dark"] .brand img { background: #fff; border-radius: 50%; }
+.brand b { font-size: 22px; display: block; line-height: 1; }
+.brand span { font-size: 12px; color: var(--muted); }
+nav.main ul { list-style: none; margin: 0; padding: 0; }
+nav.main a { display: block; padding: 9px 12px; border-radius: 8px; color: var(--ink); text-decoration: none; font-weight: 600; }
+nav.main a:hover { background: var(--bg); }
+nav.main a[aria-current] { background: var(--bg); box-shadow: inset 3px 0 0 var(--red); }
+.mini h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 8px; }
+.mini table { width: 100%; border-collapse: collapse; text-align: center; font-size: 13px; }
+.mini th { font-weight: 600; color: var(--muted); padding: 4px 0; }
+.mini td { padding: 3px 0; }
+.mini td span { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; }
+.mini td.net span { background: var(--net-soft); color: var(--net); font-weight: 700; }
+.mini td.meet span { background: var(--red); color: #fff; font-weight: 700; }
+html[data-theme="dark"] .mini td.meet span { color: #111; }
+.mini .key { display: flex; gap: 14px; font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+.mini .key i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+.theme { font: 600 14px var(--font); background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; cursor: pointer; min-height: 40px; margin-top: auto; }
+
+main { padding: 32px 40px 56px; max-width: 980px; }
+.hello { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+.hello h1 { font-size: 36px; }
+.hello p { margin: 4px 0 0; color: var(--muted); }
+
+.feature { display: grid; grid-template-columns: 110px 1fr; gap: 24px; background: var(--red-soft); border-radius: 16px; padding: 22px 24px; margin-bottom: 28px; }
+.cal { background: var(--bg); border-radius: 12px; text-align: center; overflow: hidden; align-self: start; box-shadow: 0 1px 0 var(--line), 0 6px 16px -10px rgb(0 0 0 / .3); }
+.cal .m { background: var(--red); color: #fff; font-weight: 700; font-size: 13px; letter-spacing: .14em; padding: 4px 0; }
+html[data-theme="dark"] .cal .m { background: #c8202a; }
+.cal .d { font-size: 46px; font-weight: 700; line-height: 1.1; padding-top: 4px; }
+.cal .w { font-size: 13px; color: var(--muted); padding-bottom: 8px; }
+.feature .tag { font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--red-text); }
+.feature h2 { font-size: 28px; margin: 4px 0 6px; }
+.feature p { margin: 0 0 12px; }
+.btn { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border-radius: 10px; font-weight: 700; text-decoration: none; margin-right: 8px; }
+.btn.red { background: #c8202a; color: #fff; }
+.btn.line { box-shadow: inset 0 0 0 1.5px var(--ink); color: var(--ink); }
+
+.agenda h2 { font-size: 20px; margin-bottom: 8px; }
+.agenda ol { list-style: none; margin: 0 0 32px; padding: 0; }
+.agenda li { display: grid; grid-template-columns: 120px 90px 1fr; gap: 16px; padding: 14px 4px; border-bottom: 1px solid var(--line); align-items: baseline; }
+.agenda .day { font-weight: 700; }
+.agenda .day small { display: block; font-weight: 400; color: var(--muted); font-size: 13.5px; }
+.agenda .time { color: var(--muted); font-variant-numeric: tabular-nums; }
+.agenda .chip { display: inline-block; font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 999px; margin-right: 8px; vertical-align: 1px; }
+.chip.net { background: var(--net-soft); color: var(--net); }
+.chip.meet { background: var(--red); color: #fff; }
+html[data-theme="dark"] .chip.meet { color: #111; }
+.agenda li.m { background: color-mix(in srgb, var(--red-soft) 60%, transparent); }
+
+.year { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 32px; }
+.year div { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.year b { display: block; }
+.year span { font-size: 14.5px; color: var(--muted); }
+
+.quick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.quick a { display: block; padding: 16px; border-radius: 12px; background: var(--side); text-decoration: none; color: var(--ink); border: 1px solid var(--line); }
+.quick a:hover { border-color: var(--red); }
+.quick b { display: block; }
+.quick span { font-size: 14.5px; color: var(--muted); }
+
+footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 16px; font-size: 14.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer a { margin-left: 16px; }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  aside { border-right: 0; border-bottom: 1px solid var(--line); padding: 14px 16px; gap: 12px; }
+  .top { display: flex; align-items: center; justify-content: space-between; }
+  .theme { margin-top: 0; }
+  nav.main ul { display: flex; flex-wrap: wrap; gap: 2px; }
+  nav.main a { padding: 6px 10px; font-size: 15px; }
+  .mini { display: none; }
+  main { padding: 20px 16px 40px; }
+  .hello h1 { font-size: 28px; }
+  .feature { grid-template-columns: 1fr; padding: 18px; }
+  .cal { width: 110px; }
+  .agenda li { grid-template-columns: 1fr auto; gap: 2px 12px; }
+  .agenda li > span:last-child { grid-column: 1 / -1; }
+  .year, .quick { grid-template-columns: 1fr; }
+  footer a { margin: 0 16px 0 0; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside>
+  <div class="top">
+    <a class="brand" href="#"><img src="paara-logo.svg" alt="PAARA logo"><div><b>PAARA</b><span>Palo Alto Amateur Radio Assn.</span></div></a>
+    <button class="theme" type="button" aria-pressed="false">Dark mode</button>
+  </div>
+  <nav class="main" aria-label="Main navigation"><ul>
+    <li><a href="#" aria-current="page">What's on</a></li>
+    <li><a href="#">About</a></li><li><a href="#">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+    <li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+  </ul></nav>
+  <section class="mini" aria-labelledby="cal-h">
+    <h2 id="cal-h">November 2026</h2>
+    <table>
+      <thead><tr><th scope="col" abbr="Sunday">S</th><th scope="col" abbr="Monday">M</th><th scope="col" abbr="Tuesday">T</th><th scope="col" abbr="Wednesday">W</th><th scope="col" abbr="Thursday">T</th><th scope="col" abbr="Friday">F</th><th scope="col" abbr="Saturday">S</th></tr></thead>
+      <tbody>
+        <tr><td><span>1</span></td><td class="net"><span>2</span></td><td><span>3</span></td><td><span>4</span></td><td><span>5</span></td><td class="meet"><span>6</span></td><td><span>7</span></td></tr>
+        <tr><td><span>8</span></td><td class="net"><span>9</span></td><td><span>10</span></td><td><span>11</span></td><td><span>12</span></td><td><span>13</span></td><td><span>14</span></td></tr>
+        <tr><td><span>15</span></td><td class="net"><span>16</span></td><td><span>17</span></td><td><span>18</span></td><td><span>19</span></td><td><span>20</span></td><td><span>21</span></td></tr>
+        <tr><td><span>22</span></td><td class="net"><span>23</span></td><td><span>24</span></td><td><span>25</span></td><td><span>26</span></td><td><span>27</span></td><td><span>28</span></td></tr>
+        <tr><td><span>29</span></td><td class="net"><span>30</span></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="key"><span><i style="background:var(--net)"></i>Net</span><span><i style="background:var(--red)"></i>Meeting</span></div>
+  </section>
+</aside>
+
+<main id="main">
+  <div class="hello">
+    <div><h1>What's on at PAARA</h1><p>The Palo Alto Amateur Radio Association, the friendliest club around since 1937.</p></div>
+    <a href="#">Full calendar</a>
+  </div>
+
+  <section class="feature" aria-labelledby="mt">
+    <div class="cal" aria-hidden="true"><div class="m">NOV</div><div class="d">6</div><div class="w">Friday</div></div>
+    <div>
+      <span class="tag">Next meeting · 7:00 PM Pacific</span>
+      <h2 id="mt">Scalable Phased Arrays with QuadRF</h2>
+      <p>Roy Gross KM6EOO. Cubberley Community Center, Palo Alto, and on Zoom.</p>
+      <a class="btn red" href="#">Join on Zoom</a><a class="btn line" href="#">Details &amp; raffle</a>
+    </div>
+  </section>
+
+  <section class="agenda" aria-labelledby="ag">
+    <h2 id="ag">Coming up</h2>
+    <ol>
+      <li><span class="day">Mon 26 Oct</span><span class="time">8:30 PM</span><span><span class="chip net">Net</span>Monday net and swap on N6NFI, 145.230 MHz (−) 100 Hz</span></li>
+      <li><span class="day">Mon 2 Nov</span><span class="time">8:30 PM</span><span><span class="chip net">Net</span>Monday net and swap on N6NFI</span></li>
+      <li class="m"><span class="day">Fri 6 Nov</span><span class="time">7:00 PM</span><span><span class="chip meet">Meeting</span><a href="#">Scalable Phased Arrays with QuadRF</a>, Roy Gross KM6EOO</span></li>
+      <li><span class="day">Mon 9 Nov</span><span class="time">8:30 PM</span><span><span class="chip net">Net</span>Monday net and swap on N6NFI</span></li>
+      <li><span class="day">Mon 16 Nov</span><span class="time">8:30 PM</span><span><span class="chip net">Net</span>Monday net and swap on N6NFI</span></li>
+    </ol>
+  </section>
+
+  <h2 style="font-size:20px;margin-bottom:10px">Every year</h2>
+  <div class="year">
+    <div><b>PAARA In The Park</b><span>Spring and autumn</span></div>
+    <div><b>Field Day</b><span>Last full weekend of June, Bayfront Park</span></div>
+    <div><b>Electronics Flea Market</b><span>See the calendar for dates</span></div>
+    <div><b>Field Trip</b><span>Once a year</span></div>
+    <div><b>Pacificon</b><span>Special event station</span></div>
+    <div><b>Antenna parties</b><span>Most recently June 2026</span></div>
+  </div>
+
+  <h2 style="font-size:20px;margin-bottom:10px">Get involved</h2>
+  <div class="quick">
+    <a href="#"><b>New to ham radio?</b><span>First year of membership free</span></a>
+    <a href="#"><b>Join or renew</b><span>Membership and dues</span></a>
+    <a href="#"><b>Borrow an HF rig</b><span>The loan program</span></a>
+  </div>
+
+  <footer>
+    <span>© 1937–2026 Palo Alto Amateur Radio Association</span>
+    <span><a href="#">Contact us</a><a href="#">Loan program</a><a href="#">Donate</a></span>
+  </footer>
+</main>
+</div>
+<script>
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{b.setAttribute("aria-pressed",document.documentElement.dataset.theme==="dark");};set();
+b.addEventListener("click",()=>{const r=document.documentElement,d=r.dataset.theme==="dark";if(d)delete r.dataset.theme;else r.dataset.theme="dark";try{localStorage.setItem("mock-theme",d?"light":"dark")}catch(e){}set();});});
+</script>
+</body>
+</html>
