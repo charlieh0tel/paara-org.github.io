@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup D: QSL card | PAARA</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>try{if(localStorage.getItem("mock-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+:root {
+  --paper: #f3ecdc; --paper-2: #ebe2cc; --card: #fffdf7; --rule: #d8ccb0;
+  --ink: #23201b; --muted: #5b5446; --red: #b8222a; --red-ink: #a01d24; --blue: #1f4e79;
+  --stamp: rgb(184 34 42 / .85); --shadow: 0 1px 0 rgb(0 0 0 / .05), 0 10px 24px -12px rgb(60 40 10 / .35);
+  --display: "Bebas Neue", Impact, "Arial Narrow", sans-serif;
+  --type: "Courier Prime", "Courier New", monospace;
+}
+html[data-theme="dark"] {
+  --paper: #191713; --paper-2: #211e19; --card: #272320; --rule: #3d372e;
+  --ink: #efe7d6; --muted: #b9ae98; --red: #e0474e; --red-ink: #ff8086; --blue: #8cb8e6;
+  --stamp: #ff7a80; --shadow: 0 10px 24px -12px rgb(0 0 0 / .8);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); font: 17px/1.6 var(--type);
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(to bottom, transparent 0 31px, color-mix(in srgb, var(--rule) 45%, transparent) 31px 32px);
+}
+a { color: var(--red-ink); text-underline-offset: 3px; }
+:focus-visible { outline: 3px dashed var(--red); outline-offset: 3px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--card); padding: 8px; z-index: 9; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: .02em; line-height: 1; margin: 0; }
+
+/* Masthead */
+.mast { border-bottom: 2px solid var(--ink); background: var(--paper); }
+.mast .wrap { display: flex; align-items: center; gap: 18px; padding-top: 14px; padding-bottom: 14px; }
+.mast .logo { width: 70px; height: 70px; transform: rotate(-8deg); }
+html[data-theme="dark"] .mast .logo { background: #fff; border-radius: 50%; }
+.mast .id { line-height: 1.1; }
+.mast .id b { font: 400 40px/1 var(--display); letter-spacing: .04em; display: block; }
+.mast .id span { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
+.calls { margin-left: auto; display: flex; gap: 8px; }
+.calls span { font: 400 20px var(--display); border: 2px solid var(--ink); padding: 2px 8px 0; letter-spacing: .06em; }
+.theme { font: 700 13px var(--type); text-transform: uppercase; background: var(--card); color: var(--ink); border: 2px solid var(--ink); padding: 8px 12px; cursor: pointer; min-height: 44px; }
+nav.main { border-bottom: 1px solid var(--rule); background: var(--paper-2); }
+nav.main ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0 auto; padding: 0 16px; max-width: 1120px; }
+nav.main a { display: block; padding: 12px 14px; color: var(--ink); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: .06em; }
+nav.main a:hover { background: var(--card); color: var(--red-ink); }
+nav.main li + li a::before { content: "/"; color: var(--rule); margin-right: 14px; margin-left: -14px; }
+
+/* Hero: QSL card for the next meeting */
+.hero { display: grid; grid-template-columns: 1.15fr 1.1fr; gap: 48px; align-items: center; padding: 56px 16px 40px; }
+.hero h1 { font-size: clamp(54px, 7vw, 86px); }
+.hero h1 em { font-style: normal; color: var(--red); }
+.hero p { color: var(--muted); max-width: 40ch; }
+.qsl { background: var(--card); box-shadow: var(--shadow); transform: rotate(1.2deg); position: relative; border: 1px solid var(--rule); }
+.qsl .band { background: #b8222a; color: #fff; display: flex; justify-content: space-between; align-items: baseline; padding: 10px 20px 6px; }
+.qsl .band b { font: 400 42px/1 var(--display); letter-spacing: .05em; }
+.qsl .band span { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+.qsl .body { padding: 18px 20px 20px; }
+.qsl .to { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+.qsl table { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+.qsl th { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: left; font-weight: 700; border: 1px solid var(--rule); border-bottom: 0; padding: 4px 8px 0; }
+.qsl td { font-weight: 700; border: 1px solid var(--rule); border-top: 0; padding: 0 8px 6px; font-size: 18px; }
+.qsl h2 { font-size: 34px; margin: 4px 0 2px; }
+.qsl .op { margin: 0 0 14px; }
+.qsl .stamp { position: absolute; right: 18px; bottom: 64px; transform: rotate(-14deg); border: 3px solid var(--stamp); color: var(--stamp); font: 400 22px/1 var(--display); padding: 6px 10px 2px; letter-spacing: .1em; text-align: center; border-radius: 4px; pointer-events: none; }
+.qsl .stamp small { display: block; font: 700 10px var(--type); letter-spacing: .12em; }
+.btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 16px; font: 700 15px var(--type); text-transform: uppercase; text-decoration: none; border: 2px solid var(--ink); color: var(--ink); background: transparent; }
+.btn.red { background: var(--red); border-color: var(--red); color: #fff; }
+html[data-theme="dark"] .btn.red { background: #b8222a; border-color: #b8222a; }
+
+/* Log sheet */
+.log { background: var(--card); box-shadow: var(--shadow); margin: 24px 0 48px; border: 1px solid var(--rule); }
+.log header { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 20px 8px; border-bottom: 2px solid var(--ink); flex-wrap: wrap; gap: 8px; }
+.log h2 { font-size: 34px; }
+.log header span { color: var(--muted); font-size: 14px; }
+.log .scroll { overflow-x: auto; }
+.log table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.log th { text-align: left; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 8px 20px; border-bottom: 1px solid var(--rule); }
+.log td { padding: 10px 20px; border-bottom: 1px dashed var(--rule); vertical-align: top; }
+.log td.f { font-weight: 700; color: var(--blue); white-space: nowrap; }
+
+/* Index cards */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 56px; }
+.card { display: block; background: var(--card); box-shadow: var(--shadow); border-top: 6px solid var(--red); padding: 16px 18px 18px; color: var(--ink); text-decoration: none;
+  background-image: repeating-linear-gradient(to bottom, transparent 0 27px, color-mix(in srgb, var(--blue) 18%, transparent) 27px 28px); background-position: 0 48px; }
+.card:nth-child(3n+2) { transform: rotate(-.6deg); } .card:nth-child(3n) { transform: rotate(.5deg); }
+.card:hover { outline: 2px solid var(--ink); }
+.card h3 { font-size: 30px; color: var(--red-ink); }
+.card p { margin: 6px 0 0; font-size: 15px; line-height: 28px; }
+
+/* Station calls */
+.stations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 2px solid var(--ink); margin-bottom: 56px; background: var(--card); }
+.stations div { padding: 18px 20px; border-right: 1px solid var(--rule); }
+.stations div:last-child { border-right: 0; }
+.stations b { font: 400 46px/1 var(--display); letter-spacing: .05em; display: block; color: var(--blue); }
+.stations p { margin: 6px 0 0; font-size: 15px; }
+
+/* Snapshots */
+.snaps { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin: 8px 0 64px; }
+.snap { background: #fff; padding: 10px 10px 34px; box-shadow: var(--shadow); width: 240px; position: relative; margin: 0; }
+html[data-theme="dark"] .snap { background: #e9e2d2; }
+.snap img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.snap figcaption { position: absolute; left: 10px; right: 10px; bottom: 8px; font-size: 13px; color: #333; text-align: center; }
+.snap:nth-child(odd) { transform: rotate(-2.5deg); } .snap:nth-child(even) { transform: rotate(2deg) translateY(10px); }
+.snap::before { content: ""; position: absolute; top: -10px; left: 50%; width: 80px; height: 22px; margin-left: -40px; background: rgb(240 220 160 / .75); transform: rotate(-3deg); }
+
+footer { border-top: 2px solid var(--ink); padding: 22px 0 36px; font-size: 15px; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer a { margin-right: 18px; }
+section > h2.sec { font-size: 40px; margin: 0 0 14px; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; padding-top: 32px; gap: 28px; }
+  .qsl { transform: none; }
+  .cards, .stations { grid-template-columns: 1fr; }
+  .stations div { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .calls { display: none; }
+  .mast .logo { width: 52px; height: 52px; }
+  .mast .id b { font-size: 32px; }
+  .mast .id span { display: none; }
+  .theme { margin-left: auto; }
+  nav.main a { padding: 10px 8px; font-size: 13px; }
+  nav.main li + li a::before { display: none; }
+  .snap { width: 44%; }
+  .qsl .stamp { display: none; }
+  .log table, .log tbody, .log tr, .log td { display: block; min-width: 0; }
+  .log thead { position: absolute; left: -9999px; }
+  .log tr { padding: 10px 16px; border-bottom: 1px dashed var(--rule); }
+  .log td { padding: 0; border: 0; }
+  .log td:first-child { font-weight: 700; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="mast"><div class="wrap">
+  <img class="logo" src="paara-logo.svg" alt="PAARA logo">
+  <div class="id"><b>PAARA</b><span>Palo Alto Amateur Radio Association · est. 1937</span></div>
+  <div class="calls" aria-label="Club call signs"><span>W6ARA</span><span>K6OTA</span><span>W6OTX</span></div>
+  <button class="theme" type="button" aria-pressed="false">Night</button>
+</div></div>
+<nav class="main" aria-label="Main navigation"><ul>
+  <li><a href="#">About</a></li><li><a href="#">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+  <li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+</ul></nav>
+
+<main id="main">
+<div class="wrap hero">
+  <div>
+    <h1>The friendliest club <em>on the air.</em></h1>
+    <p>Bay Area hams have met as PAARA since 1937. DX, contesting, EME, ARES, microwave, digital modes, or just curious: come say hello.</p>
+  </div>
+  <article class="qsl" aria-labelledby="qsl-title">
+    <div class="band"><b>W6ARA</b><span>Next club meeting</span></div>
+    <div class="body">
+      <p class="to">To: every ham, new or old · Confirming our next meeting:</p>
+      <table>
+        <tr><th>Date</th><th>Time</th><th>QTH</th></tr>
+        <tr><td>6 Nov 2026</td><td>7:00 PM PT</td><td>Cubberley + Zoom</td></tr>
+      </table>
+      <h2 id="qsl-title">Scalable Phased Arrays with QuadRF</h2>
+      <p class="op">Op: Roy Gross KM6EOO</p>
+      <div class="btns"><a class="btn red" href="#">Join on Zoom</a><a class="btn" href="#">Details &amp; raffle</a></div>
+    </div>
+    <div class="stamp" aria-hidden="true">PSE QSL<small>TNX · 73</small></div>
+  </article>
+</div>
+
+<div class="wrap">
+  <section class="log" aria-labelledby="log-title">
+    <header><h2 id="log-title">Station log</h2><span>The club's regular schedule</span></header>
+    <div class="scroll"><table>
+      <thead><tr><th scope="col">When</th><th scope="col">Frequency</th><th scope="col">Activity</th></tr></thead>
+      <tbody>
+        <tr><td>Mondays, 8:30 PM</td><td class="f">145.230 (−) 100 Hz</td><td>Weekly net and swap on N6NFI. <a href="#">Nets</a></td></tr>
+        <tr><td>First Friday, 7:00 PM</td><td class="f">Zoom</td><td>Monthly meeting at Cubberley Community Center, Palo Alto. <a href="#">Meetings</a></td></tr>
+        <tr><td>Last full weekend of June</td><td class="f">HF &amp; up</td><td>ARRL Field Day at Bayfront Park, Menlo Park. <a href="#">Field Day</a></td></tr>
+        <tr><td>Any time</td><td class="f">144.9625 · 444.475 · 927.075</td><td>W6OTX DMR and FM repeaters, open to all licensed hams. <a href="#">Repeaters</a></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="sec-title">
+    <h2 class="sec" id="sec-title">Find your way</h2>
+    <div class="cards">
+      <a class="card" href="#"><h3>New Hams</h3><p>Just licensed? A free first year of membership, our Discord, and meeting videos.</p></a>
+      <a class="card" href="#"><h3>Meetings</h3><p>Monthly talks, the raffle, and past presentations.</p></a>
+      <a class="card" href="#"><h3>Events</h3><p>PAARA In The Park, Field Day, the flea market and Pacificon.</p></a>
+      <a class="card" href="#"><h3>On the Air</h3><p>Nets, repeaters, POTA and SOTA.</p></a>
+      <a class="card" href="#"><h3>Membership</h3><p>Join or renew, borrow an HF rig, donate.</p></a>
+      <a class="card" href="#"><h3>Resources</h3><p>Setup guides and PAARAgraphs back to 1971.</p></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="calls-title">
+    <h2 class="sec" id="calls-title">Our calls</h2>
+    <div class="stations">
+      <div><b>W6ARA</b><p>Club station since 2006, on the air every Field Day.</p></div>
+      <div><b>K6OTA</b><p>The Get On The Air station at Field Day.</p></div>
+      <div><b>W6OTX</b><p>Our repeaters. Honors Wilbur C. Lauridsen, club trustee lost in WWII.</p></div>
+    </div>
+  </section>
+
+  <div class="snaps">
+    <figure class="snap"><img src="img/park-oct-2026-antenna.jpg" alt="Two young members assembling an antenna at PAARA In The Park"><figcaption>In The Park · Oct 2026</figcaption></figure>
+    <figure class="snap"><img src="img/uss-hornet-radio-room.jpg" alt="Members operating in the radio room aboard the USS Hornet"><figcaption>USS Hornet · Aug 2025</figcaption></figure>
+    <figure class="snap"><img src="img/antenna-party-4.jpg" alt="Members setting up antennas at Antenna Party #4"><figcaption>Antenna party · Jun 2026</figcaption></figure>
+    <figure class="snap"><img src="img/pacificon-2026.jpg" alt="Members gathered at Pacificon 2026"><figcaption>Pacificon · 2026</figcaption></figure>
+  </div>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div>© 1937–2026 Palo Alto Amateur Radio Association · 73</div>
+  <div><a href="#">Contact us</a><a href="#">Loan program</a><a href="#">Donate</a></div>
+</div></footer>
+<script>
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{b.setAttribute("aria-pressed",document.documentElement.dataset.theme==="dark");};set();
+b.addEventListener("click",()=>{const r=document.documentElement,d=r.dataset.theme==="dark";if(d)delete r.dataset.theme;else r.dataset.theme="dark";try{localStorage.setItem("mock-theme",d?"light":"dark")}catch(e){}set();});});
+</script>
+</body>
+</html>

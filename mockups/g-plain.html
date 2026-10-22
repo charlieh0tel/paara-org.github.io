@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup G: Plain &amp; practical | PAARA</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>try{const r=document.documentElement;if(localStorage.getItem("mock-theme")==="dark")r.dataset.theme="dark";const s=localStorage.getItem("mock-size");if(s)r.style.fontSize=s}catch(e){}</script>
+<style>
+:root {
+  --bg: #ffffff; --ink: #0b0c0c; --muted: #484949; --line: #b1b4b6; --soft: #f3f2f1;
+  --red: #b51d23; --link: #1d4fa0; --visited: #6b2f8a; --focus: #ffdd00; --bar: #0b0c0c; --bar-ink: #fff;
+  --font: "Atkinson Hyperlegible", Verdana, system-ui, sans-serif;
+}
+html[data-theme="dark"] {
+  --bg: #111213; --ink: #f2f2f2; --muted: #c4c6c8; --line: #55595c; --soft: #1d1f21;
+  --red: #ff6f75; --link: #8fb8ff; --visited: #d2a6f0; --bar: #000; --bar-ink: #fff;
+}
+html { font-size: 100%; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 1.1875rem/1.55 var(--font); }
+a { color: var(--link); text-decoration-thickness: max(1px, .0625rem); text-underline-offset: .15em; }
+a:hover { text-decoration-thickness: 3px; }
+:focus-visible { outline: 3px solid transparent; background-color: var(--focus) !important; color: #0b0c0c !important; box-shadow: 0 -2px var(--focus), 0 4px #0b0c0c; text-decoration: none; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 1rem; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; padding: 8px; z-index: 9; }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .75rem; font-weight: 700; }
+
+.bar { background: var(--bar); color: var(--bar-ink); border-bottom: .5rem solid var(--red); }
+html[data-theme="dark"] .bar { border-bottom-color: #b51d23; }
+.bar .wrap { display: flex; align-items: center; gap: 1rem; padding-top: .75rem; padding-bottom: .75rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: .75rem; color: #fff; text-decoration: none; font-weight: 700; font-size: 1.5rem; }
+.brand img { width: 48px; height: 48px; background: #fff; border-radius: 50%; }
+.brand span { font-weight: 400; font-size: 1rem; opacity: .85; }
+.tools { margin-left: auto; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.tools button { font: 700 1rem var(--font); background: transparent; color: #fff; border: 2px solid #fff; padding: .35rem .7rem; cursor: pointer; min-height: 44px; min-width: 44px; }
+.tools button[aria-pressed="true"] { background: #fff; color: #0b0c0c; }
+
+nav.main { border-bottom: 1px solid var(--line); }
+nav.main ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; gap: 0 1.5rem; }
+nav.main a { display: inline-block; padding: .75rem 0; font-weight: 700; }
+
+main.wrap { padding: 2rem 1rem 3rem; }
+.lede { font-size: 1.5rem; margin: 0 0 2rem; max-width: 34em; }
+h1 { font-size: 2.6rem; }
+.panel { border-left: .6rem solid var(--red); background: var(--soft); padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; }
+.panel h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: .25rem; }
+.panel .topic { font-size: 1.9rem; font-weight: 700; line-height: 1.2; margin: 0 0 .75rem; }
+.panel dl { display: grid; grid-template-columns: max-content 1fr; gap: .25rem 1.25rem; margin: 0 0 1.25rem; }
+.panel dt { font-weight: 700; }
+.panel dd { margin: 0; }
+.button { display: inline-block; background: #00703c; color: #fff; font-weight: 700; padding: .6rem 1.1rem; text-decoration: none; box-shadow: 0 3px 0 #002d18; margin-right: 1rem; }
+.button:hover { background: #005a30; }
+
+.tasks h2 { font-size: 1.75rem; }
+.tasks ul { list-style: none; padding: 0; margin: 0 0 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+.tasks li { border-top: 1px solid var(--line); padding: .9rem 0; }
+.tasks a { font-size: 1.3rem; font-weight: 700; }
+.tasks p { margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 3px solid var(--ink); padding-top: 1.5rem; }
+.two h2 { font-size: 1.5rem; }
+.two p { margin: 0 0 .75rem; }
+.two img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; margin-bottom: .5rem; }
+.small { font-size: 1rem; color: var(--muted); }
+
+footer { border-top: 1px solid var(--line); background: var(--soft); padding: 1.5rem 0 2.5rem; font-size: 1rem; }
+footer ul { list-style: none; padding: 0; margin: 0 0 .75rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+  h1 { font-size: 2rem; }
+  .lede { font-size: 1.25rem; }
+  .tasks ul, .two { grid-template-columns: 1fr; }
+  .brand span { display: none; }
+  nav.main ul { gap: 0 1rem; }
+  .panel { padding: 1rem; }
+  .panel .topic { font-size: 1.5rem; }
+  .button { display: table; margin: 0 0 1rem; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="bar"><div class="wrap">
+  <a class="brand" href="#"><img src="paara-logo.svg" alt="">PAARA <span>Palo Alto Amateur Radio Association</span></a>
+  <div class="tools">
+    <button type="button" class="size" data-size="100%" aria-pressed="true" aria-label="Normal text size">A</button>
+    <button type="button" class="size" data-size="125%" aria-pressed="false" aria-label="Larger text" style="font-size:1.2rem">A</button>
+    <button type="button" class="size" data-size="150%" aria-pressed="false" aria-label="Largest text" style="font-size:1.45rem">A</button>
+    <button type="button" class="theme" aria-pressed="false">Dark</button>
+  </div>
+</div></div>
+<nav class="main" aria-label="Main navigation"><div class="wrap"><ul>
+  <li><a href="#">About</a></li><li><a href="#">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+  <li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+</ul></div></nav>
+
+<main id="main" class="wrap">
+  <h1>Palo Alto Amateur Radio Association</h1>
+  <p class="lede">A friendly amateur radio club for the San Francisco Bay Area, meeting since 1937. Everyone is welcome, licensed or not.</p>
+
+  <section class="panel" aria-labelledby="next">
+    <h2 id="next">Next meeting</h2>
+    <p class="topic">Scalable Phased Arrays with QuadRF</p>
+    <dl>
+      <dt>When</dt><dd>Friday 6 November 2026, 7:00 PM Pacific</dd>
+      <dt>Where</dt><dd>Usually Cubberley Community Center, 4000 Middlefield Road, Palo Alto, and on Zoom</dd>
+      <dt>Speaker</dt><dd>Roy Gross KM6EOO</dd>
+    </dl>
+    <a class="button" href="#">Join on Zoom</a><a href="#">Meeting details and raffle</a>
+  </section>
+
+  <section class="tasks" aria-labelledby="tasks">
+    <h2 id="tasks">I want to…</h2>
+    <ul>
+      <li><a href="#">Get started as a new ham</a><p>Free first year of membership, Discord, meeting videos.</p></li>
+      <li><a href="#">Check in to the Monday net</a><p>8:30 PM on N6NFI, 145.230 MHz (−) 100 Hz.</p></li>
+      <li><a href="#">Join or renew my membership</a><p>Dues, family membership, how to pay.</p></li>
+      <li><a href="#">Find a club repeater</a><p>2 m and 70 cm DMR, 33 cm FM.</p></li>
+      <li><a href="#">Borrow an HF radio</a><p>The loan program for newer hams.</p></li>
+      <li><a href="#">Read PAARAgraphs</a><p>The club newsletter, back to 1971.</p></li>
+      <li><a href="#">Come to Field Day</a><p>Last full weekend of June, Bayfront Park, Menlo Park.</p></li>
+      <li><a href="#">See club photos</a><p>Albums from events and outings.</p></li>
+    </ul>
+  </section>
+
+  <div class="two">
+    <section aria-labelledby="welcome">
+      <h2 id="welcome">Welcome</h2>
+      <p>Whether you're a new ham, an experienced old-timer, a visitor from out of the area, or curious about amateur radio, we invite you to our monthly meetings.</p>
+      <p class="small">Bob Ridenour, KN6YGN, President</p>
+    </section>
+    <section aria-labelledby="recent">
+      <h2 id="recent">Recently</h2>
+      <img src="img/park-oct-2026-antenna.jpg" alt="Two young members assembling an antenna at PAARA In The Park">
+      <p class="small">PAARA In The Park, October 2026. <a href="#">See the album</a></p>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <ul><li><a href="#">Contact us</a></li><li><a href="#">Loan program</a></li><li><a href="#">Donate</a></li><li><a href="#">Accessibility</a></li></ul>
+  <div>© 1937–2026 Palo Alto Amateur Radio Association</div>
+</div></footer>
+<script>
+const R=document.documentElement;
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{b.setAttribute("aria-pressed",R.dataset.theme==="dark");};set();
+b.addEventListener("click",()=>{const d=R.dataset.theme==="dark";if(d)delete R.dataset.theme;else R.dataset.theme="dark";try{localStorage.setItem("mock-theme",d?"light":"dark")}catch(e){}set();});});
+const sizes=document.querySelectorAll(".size"),mark=()=>sizes.forEach(s=>s.setAttribute("aria-pressed",(R.style.fontSize||"100%")===s.dataset.size));mark();
+sizes.forEach(s=>s.addEventListener("click",()=>{R.style.fontSize=s.dataset.size;try{localStorage.setItem("mock-size",s.dataset.size)}catch(e){}mark();}));
+</script>
+</body>
+</html>

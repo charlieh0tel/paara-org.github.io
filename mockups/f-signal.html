@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup F: Signal | PAARA</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>try{if(localStorage.getItem("mock-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+:root {
+  --bg: #f7f8fa; --panel: #ffffff; --line: #dfe3ea; --line-2: #c9cfd9;
+  --ink: #0d1726; --muted: #4b5668; --red: #c8202a; --red-ink: #b01c25; --accent: #0b6e8a;
+  --screen: #07101d; --screen-ink: #cfe3ff;
+  --sans: "Space Grotesk", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+html[data-theme="dark"] {
+  --bg: #070d17; --panel: #0e1726; --line: #1d2a3d; --line-2: #2a3a52;
+  --ink: #e6eefb; --muted: #9eb0c9; --red: #ff4d57; --red-ink: #ff7a82; --accent: #4fd1e8;
+  --screen: #030810;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--sans); }
+a { color: var(--red-ink); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--panel); padding: 8px; z-index: 9; }
+h1, h2, h3 { line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+.mono { font-family: var(--mono); }
+.label { font: 500 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+header { border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 85%, transparent); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(10px); }
+header .wrap { display: flex; align-items: center; gap: 20px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 20px; letter-spacing: .02em; }
+.brand img { width: 40px; height: 40px; }
+html[data-theme="dark"] .brand img { background: #fff; border-radius: 50%; }
+.brand small { font: 500 12px var(--mono); color: var(--muted); letter-spacing: .06em; }
+nav.main { margin-left: auto; }
+nav.main ul { display: flex; list-style: none; margin: 0; padding: 0; gap: 2px; }
+nav.main a { display: block; padding: 8px 12px; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; }
+nav.main a:hover { background: var(--panel); box-shadow: inset 0 0 0 1px var(--line); }
+.theme { font: 500 13px var(--mono); background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; cursor: pointer; min-height: 40px; }
+.menu { display: none; }
+.menu summary { list-style: none; cursor: pointer; font: 500 14px var(--mono); padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; }
+.menu summary::-webkit-details-marker { display: none; }
+
+.hero { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; padding: 56px 16px 40px; }
+.hero h1 { font-size: clamp(38px, 5.6vw, 64px); font-weight: 700; }
+.hero h1 span { color: var(--red); }
+.hero p { color: var(--muted); font-size: 19px; max-width: 44ch; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 18px; border-radius: 10px; font-weight: 600; text-decoration: none; }
+.btn.primary { background: var(--red); color: #fff; }
+html[data-theme="dark"] .btn.primary { background: #c8202a; }
+.btn.ghost { color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line-2); }
+
+.scope { background: var(--screen); border-radius: 14px; padding: 14px; box-shadow: 0 20px 50px -20px rgb(7 16 29 / .55), inset 0 0 0 1px rgb(255 255 255 / .06); color: var(--screen-ink); }
+.scope .top { display: flex; justify-content: space-between; font: 500 12px var(--mono); letter-spacing: .08em; color: #8fb3e0; margin-bottom: 8px; }
+.scope .top b { color: #ff6b73; font-weight: 600; }
+.scope canvas { display: block; width: 100%; height: 260px; border-radius: 6px; }
+.scope .axis { display: flex; justify-content: space-between; font: 11px var(--mono); color: #6f8fb8; margin-top: 6px; }
+.scope .tune { display: flex; align-items: baseline; gap: 14px; margin-top: 10px; border-top: 1px solid rgb(255 255 255 / .08); padding-top: 10px; flex-wrap: wrap; }
+.scope .tune b { font: 700 34px var(--mono); color: #fff; letter-spacing: .02em; }
+.scope .tune span { font: 13px var(--mono); color: #9fbbe0; }
+
+.glance { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 16px; margin: 8px auto 48px; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+.tile h2 { font-size: 24px; margin: 8px 0 6px; }
+.tile p { margin: 0 0 8px; color: var(--muted); }
+.tile .big { font: 700 28px var(--mono); color: var(--ink); }
+.tile.meet { border-top: 4px solid var(--red); }
+.count { display: inline-block; font: 600 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); border: 1px solid currentColor; border-radius: 999px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+
+.split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; margin-bottom: 56px; }
+.table { align-self: start; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.table header { position: static; display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: none; backdrop-filter: none; }
+.table h2 { font-size: 22px; }
+.table .scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 460px; }
+th { text-align: left; font: 500 11.5px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 8px 20px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 60%, var(--panel)); }
+td { padding: 11px 20px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+td.f { font: 600 15px var(--mono); white-space: nowrap; }
+.mode { font: 600 11px var(--mono); padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--muted); }
+
+.sections { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
+.sections a { display: flex; gap: 14px; align-items: flex-start; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; text-decoration: none; color: var(--ink); }
+.sections a:hover { border-color: var(--red); }
+.sections svg { flex: none; width: 28px; height: 28px; stroke: var(--red); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.sections b { display: block; font-size: 17px; }
+.sections span { font-size: 14px; color: var(--muted); }
+
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 56px; }
+.gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; display: block; }
+
+footer { border-top: 1px solid var(--line); padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+footer a { margin-left: 18px; }
+
+@media (max-width: 980px) {
+  nav.main { display: none; }
+  .menu { display: block; margin-left: auto; }
+  .menu[open] nav.main { display: block; position: absolute; left: 0; right: 0; top: 64px; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .menu[open] nav.main ul { flex-direction: column; padding: 8px 16px 16px; }
+  .brand small { display: none; }
+  .hero, .split { grid-template-columns: 1fr; }
+  .hero { padding-top: 28px; gap: 28px; }
+  .glance { grid-template-columns: 1fr; }
+  .sections { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .scope canvas { height: 200px; }
+  footer a { margin: 0 18px 0 0; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap">
+  <a class="brand" href="#"><img src="paara-logo.svg" alt="">PAARA <small>W6ARA · EST. 1937</small></a>
+  <nav class="main" aria-label="Main navigation"><ul>
+    <li><a href="#">About</a></li><li><a href="#">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+    <li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+  </ul></nav>
+  <details class="menu"><summary>Menu</summary><nav class="main" aria-label="Main navigation (mobile)"><ul>
+    <li><a href="#">About</a></li><li><a href="#">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+    <li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+  </ul></nav></details>
+  <button class="theme" type="button" aria-pressed="false">◐ Dark</button>
+</div></header>
+
+<main id="main">
+<div class="wrap hero">
+  <div>
+    <span class="label">Palo Alto Amateur Radio Association</span>
+    <h1>Bay Area hams, <span>on the air since 1937.</span></h1>
+    <p>A general interest club, and the friendliest one around: DX, contesting, EME, ARES, microwave, digital modes, and new hams finding their way.</p>
+    <div class="cta"><a class="btn primary" href="#">I'm new to ham radio</a><a class="btn ghost" href="#">Join PAARA</a></div>
+  </div>
+  <figure class="scope" style="margin:0" aria-label="Illustration: a waterfall display tuned to the club net frequency, 145.230 MHz">
+    <div class="top"><span>N6NFI · 2 m FM</span><b>● MON 20:30</b></div>
+    <canvas id="wf" width="560" height="260" aria-hidden="true"></canvas>
+    <div class="axis" aria-hidden="true"><span>145.200</span><span>145.215</span><span>145.230</span><span>145.245</span><span>145.260</span></div>
+    <div class="tune"><b>145.230</b><span>MHz · offset (−) · tone 100 Hz</span><span>Weekly net &amp; swap</span></div>
+  </figure>
+</div>
+
+<div class="wrap glance">
+  <div class="tile meet">
+    <span class="label">Next meeting</span><span class="count" id="count"></span>
+    <h2>Scalable Phased Arrays with QuadRF</h2>
+    <p>Roy Gross KM6EOO · Fri 6 Nov 2026 · 7:00 PM PT · Cubberley Community Center and Zoom</p>
+    <a href="#">Join on Zoom</a> · <a href="#">Details &amp; raffle</a>
+  </div>
+  <div class="tile">
+    <span class="label">Field Day</span>
+    <p class="big">Last full weekend in June</p>
+    <p>Bayfront Park, Menlo Park, as W6ARA and K6OTA.</p>
+  </div>
+  <div class="tile">
+    <span class="label">New hams</span>
+    <p class="big">1 year free</p>
+    <p>Your first year of membership is on us. <a href="#">Start here</a></p>
+  </div>
+</div>
+
+<div class="wrap split">
+  <section class="table" aria-labelledby="rpt">
+    <header><h2 id="rpt">Repeaters</h2><a href="#">All details</a></header>
+    <div class="scroll" tabindex="0" role="region" aria-labelledby="rpt"><table>
+      <thead><tr><th scope="col">Call</th><th scope="col">Frequency</th><th scope="col">Mode</th><th scope="col">Access</th></tr></thead>
+      <tbody>
+        <tr><td>N6NFI</td><td class="f">145.230</td><td><span class="mode">FM</span></td><td class="mono">(−) 100 Hz</td></tr>
+        <tr><td>W6OTX</td><td class="f">144.9625</td><td><span class="mode">DMR</span></td><td class="mono">+2.5 · CC3</td></tr>
+        <tr><td>W6OTX</td><td class="f">444.475</td><td><span class="mode">DMR</span></td><td class="mono">+5 · CC1</td></tr>
+        <tr><td>W6OTX</td><td class="f">927.075</td><td><span class="mode">FM</span></td><td class="mono">−25 · 107.2 Hz</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+  <nav class="sections" aria-label="Sections">
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><div><b>About</b><span>History, officers, call signs</span></div></a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b>Meetings</b><span>Talks, raffle, past meetings</span></div></a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20l6-12 4 7 3-4 5 9z"/></svg><div><b>Events</b><span>Field Day, In The Park, flea market</span></div></a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V10M8 6a6 6 0 0 1 8 0M5 3a10 10 0 0 1 14 0"/><circle cx="12" cy="9" r="1.5"/></svg><div><b>On the Air</b><span>Nets, repeaters, POTA/SOTA</span></div></a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.8z"/></svg><div><b>New Hams</b><span>Getting started</span></div></a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg><div><b>Membership</b><span>Join, renew, loaner rigs</span></div></a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5M8 13h8M8 17h6"/></svg><div><b>Resources</b><span>Setup guides, PAARAgraphs</span></div></a>
+  </nav>
+</div>
+
+<div class="wrap gallery">
+  <img src="img/park-oct-2026-antenna.jpg" alt="Two young members assembling an antenna at PAARA In The Park, October 2026">
+  <img src="img/uss-hornet-radio-room.jpg" alt="Members operating in the radio room aboard the USS Hornet, August 2025">
+  <img src="img/antenna-party-4.jpg" alt="Members setting up antennas at Antenna Party #4, June 2026">
+  <img src="img/park-apr-2026-lawn.jpg" alt="Members on the lawn at PAARA In The Park, April 2026">
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div>© 1937–2026 Palo Alto Amateur Radio Association · W6ARA · K6OTA · W6OTX</div>
+  <div><a href="#">Contact us</a><a href="#">Loan program</a><a href="#">Donate</a></div>
+</div></footer>
+<script>
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{b.setAttribute("aria-pressed",document.documentElement.dataset.theme==="dark");};set();
+b.addEventListener("click",()=>{const r=document.documentElement,d=r.dataset.theme==="dark";if(d)delete r.dataset.theme;else r.dataset.theme="dark";try{localStorage.setItem("mock-theme",d?"light":"dark")}catch(e){}set();});});
+
+// Days until the meeting.
+(()=>{const d=Math.ceil((new Date("2026-11-06T19:00:00-08:00")-new Date())/864e5);const el=document.getElementById("count");if(d>1)el.textContent="in "+d+" days";else if(d===1)el.textContent="tomorrow";else el.remove();})();
+
+// Waterfall: noise floor plus an FM carrier at 145.230 that keys up in bursts.
+(()=>{const c=document.getElementById("wf"),x=c.getContext("2d"),W=c.width,H=c.height,mid=W/2;
+const pal=v=>{v=Math.max(0,Math.min(1,v));const s=[[3,8,24],[10,40,110],[0,150,200],[250,220,60],[255,70,60],[255,255,255]];const p=v*(s.length-1),i=Math.floor(p),f=p-i,a=s[i],b=s[Math.min(i+1,s.length-1)];return[a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f];};
+let t=0,on=true,left=40;const row=()=>{const img=x.createImageData(W,1);if(--left<0){on=!on;left=on?40+Math.random()*70:8+Math.random()*25;}
+for(let i=0;i<W;i++){let v=.12+Math.random()*.16;const d=Math.abs(i-mid);if(on){v+=Math.exp(-(d*d)/(2*9*9))*.75+Math.random()*.08*(d<14);}
+const [r,g,b]=pal(v);img.data.set([r,g,b,255],i*4);}return img;};
+const step=()=>{x.drawImage(c,0,1);x.putImageData(row(),0,0);t++;};
+for(let i=0;i<H;i++)step();
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){setInterval(step,60);}
+x.strokeStyle="rgba(255,90,100,.7)";})();
+</script>
+</body>
+</html>
