@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup B inside: November meeting | PAARA</title>
+<script>try{if(localStorage.getItem("mock-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+:root {
+  --red: #d2232a; --red-text: #b51d23;
+  --ink: #0b0b0b; --bg: #f4f2ee; --card: #fff; --line: #d9d5cc;
+  --text: #1a1a1a; --muted: #4f4f4f; --link: #b51d23;
+  --lcd-bg: #111; --lcd: #ff5a5f;
+  --font: Futura, "Futura PT", Jost, "Century Gothic", "Avenir Next", system-ui, sans-serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+html[data-theme="dark"] {
+  --red-text: #ff6b70; --bg: #101010; --card: #1a1a1a; --line: #333;
+  --text: #e8e8e8; --muted: #b0b0b0; --link: #ff7b80; --lcd-bg: #000;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 var(--body); }
+a { color: var(--link); }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font); line-height: 1.1; text-transform: uppercase; letter-spacing: .03em; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: #fff; color: #000; padding: 8px; z-index: 9; }
+
+/* Black band with the logo's diagonal bolt */
+.top { background: var(--ink); color: #fff; position: relative; overflow: hidden; }
+.top::before { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, transparent 0 58%, var(--red) 58% 63%, transparent 63%); pointer-events: none; }
+.top .bar { display: flex; align-items: center; gap: 16px; padding-top: 14px; padding-bottom: 14px; position: relative; }
+.brand { display: flex; align-items: center; gap: 14px; color: #fff; text-decoration: none; }
+.brand img { width: 72px; height: 72px; background: #fff; border-radius: 50%; }
+.brand strong { font-family: var(--font); font-size: 34px; letter-spacing: .12em; line-height: 1; display: block; }
+.brand span { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #ccc; }
+.theme { margin-left: auto; font: 600 13px var(--font); text-transform: uppercase; letter-spacing: .1em; background: transparent; color: #fff; border: 2px solid #fff; padding: 8px 14px; cursor: pointer; min-height: 44px; }
+nav.main { position: relative; border-top: 1px solid #333; }
+nav.main ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0 auto; padding: 0 16px; }
+nav.main a { display: block; padding: 14px 16px; color: #fff; text-decoration: none; font: 600 15px var(--font); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
+nav.main a:hover, nav.main a[aria-current] { background: var(--red); }
+
+.hero { position: relative; padding: 56px 16px 72px; }
+.hero h1 { font-size: clamp(36px, 7vw, 76px); margin: 0; color: #fff; max-width: 12ch; }
+.hero p { color: #ddd; font-size: 19px; max-width: 48ch; }
+
+/* Meeting "ticket" overlapping the band */
+.ticket { position: relative; margin-top: -48px; background: var(--card); border: 2px solid var(--ink); display: grid; grid-template-columns: 180px 1fr auto; box-shadow: 8px 8px 0 var(--red); }
+html[data-theme="dark"] .ticket { border-color: #444; }
+.ticket .date { background: var(--red); color: #fff; padding: 20px; font-family: var(--font); text-transform: uppercase; display: flex; flex-direction: column; justify-content: center; }
+.ticket .date b { font-size: 56px; line-height: 1; }
+.ticket .info { padding: 20px 24px; }
+.ticket .info small { font: 700 13px var(--font); letter-spacing: .14em; text-transform: uppercase; color: var(--red-text); }
+.ticket h2 { margin: 4px 0 8px; font-size: 26px; text-transform: none; letter-spacing: 0; }
+.ticket .info p { margin: 0; color: var(--muted); }
+.ticket .act { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 20px; border-left: 2px dashed var(--line); }
+.btn { display: inline-block; text-align: center; padding: 12px 18px; font: 700 14px var(--font); text-transform: uppercase; letter-spacing: .08em; text-decoration: none; min-height: 44px; }
+.btn.red { background: var(--red); color: #fff; }
+.btn.line { border: 2px solid currentColor; color: var(--text); }
+
+/* Net as a radio display */
+.net { margin: 48px 0; background: var(--lcd-bg); color: #fff; display: grid; grid-template-columns: auto 1fr; gap: 24px; padding: 24px 28px; align-items: center; }
+.lcd { font: 700 clamp(40px, 8vw, 72px)/1 var(--mono); color: var(--lcd); letter-spacing: .04em; }
+.lcd small { font-size: .3em; color: #ccc; margin-left: 8px; }
+.net h2 { margin: 0 0 4px; font-size: 22px; }
+.net p { margin: 0; color: #ccc; }
+.net a { color: #fff; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 2px solid var(--ink); margin-bottom: 48px; }
+html[data-theme="dark"] .grid { border-color: #444; }
+.grid a { display: block; padding: 24px; text-decoration: none; color: var(--text); background: var(--card); border: 1px solid var(--line); }
+.grid a:hover { background: var(--ink); color: #fff; }
+.grid a:hover p { color: #ddd; }
+.grid .n { font: 700 14px var(--font); color: var(--red-text); }
+.grid a:hover .n { color: #ff8a8e; }
+.grid h3 { margin: 6px 0; font-size: 22px; }
+.grid p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.strip { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 6px; margin-bottom: 48px; }
+.strip img { width: 100%; height: 100%; min-height: 160px; object-fit: cover; display: block; filter: grayscale(.2); }
+.strip img:first-child { grid-row: span 2; }
+
+footer { background: var(--ink); color: #ccc; padding: 28px 0; border-top: 6px solid var(--red); font-size: 15px; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+footer a { color: #fff; margin-left: 20px; }
+
+@media (max-width: 760px) {
+  .ticket { grid-template-columns: 1fr; box-shadow: 6px 6px 0 var(--red); }
+  .ticket .date { flex-direction: row; gap: 12px; align-items: baseline; }
+  .ticket .date b { font-size: 40px; }
+  .ticket .act { border-left: 0; border-top: 2px dashed var(--line); }
+  .net { grid-template-columns: 1fr; }
+  .lcd small { display: block; margin: 8px 0 0; font-size: 18px; }
+  .grid { grid-template-columns: 1fr; }
+  nav.main a { padding: 10px 10px; font-size: 13px; }
+  .hero { padding-top: 32px; padding-bottom: 64px; }
+  .strip { grid-template-columns: 1fr 1fr; }
+  .strip img:first-child { grid-column: span 2; grid-row: auto; }
+  .brand img { width: 52px; height: 52px; }
+  .brand strong { font-size: 26px; }
+  .brand span { display: none; }
+  footer a { margin: 0 20px 0 0; }
+}
+
+.mt { max-width: 72ch; padding: 24px 0 56px; }
+.mt-crumbs { font-size: 14px; margin: 0 0 8px; }
+.mt h1 { margin: 0 0 20px; }
+.mt h2 { margin: 40px 0 12px; }
+.mt h3 { margin: 22px 0 6px; }
+.mt-facts { padding: 20px 22px; margin-bottom: 8px; }
+.mt-facts p { margin: 0; }
+.mt-topic { margin: 4px 0 12px !important; }
+.mt-facts dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 0 0 16px; }
+.mt-facts dd { margin: 0; font-weight: 600; }
+.mt-zoom { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.mt-zoom span { font-size: 15px; }
+.mt-prizes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; list-style: none; padding: 0; margin: 12px 0 0; }
+.mt-prizes li { padding: 10px; font-size: 14px; line-height: 1.4; }
+.mt-prizes img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #fff; display: block; margin-bottom: 8px; }
+.mt-prizes b { display: block; }
+.mt-where { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.mt-where > div { padding: 14px 18px; }
+.mt-where h3 { margin-top: 0; }
+.mt-where p { margin: 0; }
+.mt-past { list-style: none; padding: 0; margin: 0; }
+.mt-past li { display: grid; grid-template-columns: 90px 1fr; gap: 12px; padding: 10px 0; }
+.mt-who { display: block; font-size: 15px; }
+.mt-tag { font-size: 12px; font-weight: 700; padding: 1px 8px; white-space: nowrap; }
+@media (max-width: 640px) {
+  .mt-prizes { grid-template-columns: 1fr 1fr; }
+  .mt-where { grid-template-columns: 1fr; }
+  .mt-past li { grid-template-columns: 1fr; gap: 0; }
+  .mt-facts { padding: 16px; }
+}
+
+.mt h1 { font-size: clamp(32px, 5vw, 52px); }
+.mt h2 { font-size: 26px; border-top: 2px solid var(--ink); padding-top: 14px; }
+html[data-theme="dark"] .mt h2 { border-color: #444; }
+.mt h3 { text-transform: none; letter-spacing: 0; font-size: 20px; }
+.mt-crumbs, .mt-crumbs a { color: var(--muted); }
+.mt-facts { background: var(--card); border: 2px solid var(--ink); box-shadow: 8px 8px 0 var(--red); }
+html[data-theme="dark"] .mt-facts { border-color: #444; }
+.mt-label { font: 700 13px var(--font); letter-spacing: .14em; text-transform: uppercase; color: var(--red-text); }
+.mt-topic { font: 700 24px/1.2 var(--font); }
+.mt-facts dt, .mt-zoom span, .mt-who, .mt-when { color: var(--muted); }
+.mt-prizes li, .mt-where > div { background: var(--card); border: 2px solid var(--ink); }
+html[data-theme="dark"] .mt-prizes li, html[data-theme="dark"] .mt-where > div { border-color: #444; }
+.mt-prizes b { font: 700 13px var(--font); text-transform: uppercase; letter-spacing: .08em; color: var(--red-text); }
+.mt-past li { border-bottom: 1px solid var(--line); }
+.mt-tag { background: var(--ink); color: #fff; text-transform: uppercase; letter-spacing: .08em; }
+html[data-theme="dark"] .mt-tag { background: #333; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top">
+  <div class="wrap bar">
+    <a class="brand" href="b-bolt.html"><img src="paara-logo.svg" alt="PAARA logo"><div><strong>PAARA</strong><span>Palo Alto Amateur Radio Association</span></div></a>
+    <button class="theme" type="button" aria-pressed="false">Dark</button>
+  </div>
+  <nav class="main" aria-label="Main navigation"><ul class="wrap">
+    <li><a href="#">About</a></li><li><a href="b-meeting.html" aria-current="page">Meetings</a></li><li><a href="#">Events</a></li>
+    <li><a href="#">On the Air</a></li><li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+  </ul></nav>
+</div>
+
+<main id="main" class="wrap">
+<article class="mt">
+  <p class="mt-crumbs"><a href="b-bolt.html">Home</a> › <a href="b-meeting.html">Meetings</a> › November 2026</p>
+  <h1>November Monthly Meeting</h1>
+  <div class="mt-facts">
+    <p class="mt-label">Friday, 6 November 2026</p>
+    <p class="mt-topic">Scalable Phased Arrays with QuadRF</p>
+    <dl><dt>Time</dt><dd>7:00 PM Pacific Time</dd><dt>Presenter</dt><dd>Roy Gross KM6EOO</dd></dl>
+    <p class="mt-zoom"><a class="btn red" href="#">Join on Zoom</a> <span>or dial +1 669 900 6833, meeting ID 821 4344 5051</span></p>
+  </div>
+
+  <h2 id="details">Details</h2>
+  <p>Phased arrays are a core technology for RF professionals: direction finding, beamforming, interferometry, imaging, and MIMO are essentials of modern wireless engineering. Until now, these capabilities have been prohibitively expensive for radio amateurs. Learn how the QuadRF—a low-cost, open-source, and highly scalable phased array SDR—brings spatial wireless exploration to amateur radio. We will break down the radio's unique Raspberry Pi-based architecture, discuss clever DSP techniques, and explore its many applications. See the QuadRF live in action as a real-time AR radio camera, and discover its potential for mesh networks, data links, sensing, and even a 240-element array for moonbounce.</p>
+  <p>Roy is an undergrad studying electrical engineering at UC Santa Barbara, and building phased arrays with ScaleRF. He attended his first PAARA meeting in fifth grade, and got his ticket, and callsign KM6EOO, soon after. Roy enjoys homebrewing antennas and radios, with particular interest in SDRs and phased arrays. He also enjoys biking and hiking to operate HF portable.</p>
+
+  <h2 id="raffle">Raffle</h2>
+  <ul class="mt-prizes">
+    <li><img src="img/raffle-202611-1.jpg" alt="Bioenno Power 12V 12Ah LiFePO4 battery"><b>1st prize</b>Bioenno Power 12V 12Ah LiFePO4 Battery</li>
+    <li><img src="img/raffle-202611-2.jpg" alt="Surecom SW-102 power and SWR meter"><b>2nd prize</b>Surecom SW-102 125-525Mhz Power &amp; SWR Meter</li>
+    <li><img src="img/raffle-202611-3.jpg" alt="TIDRADIO TD-H3 handheld radio"><b>3rd prize</b>TIDRADIO TD-H3 Multi-Band Ham Radio</li>
+    <li><img src="img/raffle-202611-4.jpg" alt="Endoscope camera"><b>4th prize</b>Endoscope Camera</li>
+    <li><img src="img/raffle-202611-5.jpg" alt="Anker Prime USB C cable"><b>5th prize</b>Anker Prime USB C to USB C Cable, 240W (3 ft)</li>
+  </ul>
+
+  <h2 id="about">About club meetings</h2>
+  <p>The Palo Alto Amateur Radio Association meets on the 1st Friday of the month at 7:00 pm (except when the first Friday lands on a holiday, when it typically moves to the 2nd Friday).</p>
+  <div class="mt-where">
+    <div><h3>Where</h3><p>Room H6, Cubberley Community Center<br>4000 Middlefield Road, Palo Alto, CA 94303<br>(650) 329-2418</p></div>
+    <div><h3>After the meeting</h3><p>Many members gather for beer, pizza, and eyeball QSO at Round Table Pizza, <a href="#">702 Colorado Ave in Palo Alto</a>.</p></div>
+  </div>
+  <h3>Board meetings</h3>
+  <p>The PAARA Board meets on the 3rd Wednesday of every month at 7:00 pm by video conference. Any PAARA member is welcome to attend.</p>
+  <h3>Recordings</h3>
+  <p>Monthly presentations since 2021 are on each meeting's page and on our <a href="#">YouTube channel</a>.</p>
+
+  <h2 id="past">Past meetings</h2>
+  <ul class="mt-past">
+    <li><span class="mt-when">Oct 2026</span><span><a href="#">All-Year DX Contest</a> <span class="mt-tag">Video</span></span></li>
+    <li><span class="mt-when">Sep 2026</span><span><a href="#">Radio Direction Finding - History and Techniques</a> <span class="mt-tag">Video</span><span class="mt-who">Benjamin Friedlander AD6JA</span></span></li>
+    <li><span class="mt-when">Aug 2026</span><span><a href="#">Antenna design, efficiency, and portability</a> <span class="mt-tag">Video</span><span class="mt-who">Greg Mihran, KJ6ER</span></span></li>
+    <li><span class="mt-when">Jul 2026</span><span><a href="#">Multiple Topics</a> <span class="mt-tag">Video</span><span class="mt-who">Justin, AI6YM; Ben, KN6UBF; Connie, W6EFI</span></span></li>
+    <li><span class="mt-when">Jun 2026</span><span><a href="#">The California Historical Radio Society: Preserving the Foundations of Modern Communication</a> <span class="mt-tag">Video</span><span class="mt-who">Rachel Lee</span></span></li>
+  </ul>
+  <p><a href="#">All past meetings, 2010 to date</a></p>
+</article>
+</main>
+
+<footer><div class="wrap">
+  <div>© 1937–2026 Palo Alto Amateur Radio Association</div>
+  <div><a href="#">Contact us</a><a href="#">Loan program</a><a href="#">Donate</a></div>
+</div></footer>
+<script>
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{const d=document.documentElement.dataset.theme==="dark";b.setAttribute("aria-pressed",d);};set();
+b.addEventListener("click",()=>{const r=document.documentElement;if(r.dataset.theme==="dark"){delete r.dataset.theme;try{localStorage.setItem("mock-theme","light")}catch(e){}}else{r.dataset.theme="dark";try{localStorage.setItem("mock-theme","dark")}catch(e){}}set();});});
+</script>
+</body>
+</html>

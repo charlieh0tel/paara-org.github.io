@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup C inside: November meeting | PAARA</title>
+<script>try{if(localStorage.getItem("mock-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+:root {
+  --red: #c41f26; --red-text: #a8191f; --red-soft: #fbe9e9;
+  --bg: #fbfaf7; --card: #fff; --line: #e7e3da;
+  --text: #22201c; --muted: #5a554c; --head: #141210; --link: #a8191f;
+  --font: Futura, "Futura PT", Jost, "Century Gothic", "Avenir Next", system-ui, sans-serif;
+  --body: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  --ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html[data-theme="dark"] {
+  --red: #d2232a; --red-text: #ff7b80; --red-soft: #3a1d1e;
+  --bg: #171513; --card: #211e1b; --line: #3a3530;
+  --text: #ece7df; --muted: #b5ada1; --head: #fff; --link: #ff8a8e;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 18px/1.65 var(--body); }
+a { color: var(--link); }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font); color: var(--head); line-height: 1.15; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--bg); padding: 8px; z-index: 9; }
+
+header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); font-family: var(--ui); }
+header .wrap { display: flex; align-items: center; gap: 16px; padding-top: 10px; padding-bottom: 10px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--head); font: 700 20px var(--font); letter-spacing: .05em; }
+.brand img { width: 44px; height: 44px; }
+html[data-theme="dark"] .brand img { background: #fff; border-radius: 50%; }
+nav.main { margin-left: auto; }
+nav.main ul { display: flex; list-style: none; gap: 2px; margin: 0; padding: 0; }
+nav.main a { display: block; padding: 10px 12px; border-radius: 999px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 500; }
+nav.main a:hover { background: var(--red-soft); color: var(--red-text); }
+nav.main a.join { background: var(--red); color: #fff; }
+.theme { font: 500 14px var(--ui); background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; cursor: pointer; min-height: 40px; }
+.menu { display: none; }
+.menu summary { list-style: none; cursor: pointer; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; }
+.menu summary::-webkit-details-marker { display: none; }
+
+.hero { position: relative; min-height: 460px; display: flex; align-items: flex-end; color: #fff; background: #333 url("img/park-oct-2026-antenna.jpg") center 30% / cover; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(0 0 0 / .78), rgb(0 0 0 / .1) 65%); }
+.hero .wrap { position: relative; z-index: 1; padding-bottom: 40px; width: 100%; }
+.hero h1 { color: #fff; font-size: clamp(34px, 6vw, 60px); margin: 0 0 8px; max-width: 16ch; }
+.hero p { margin: 0; font-size: 20px; max-width: 46ch; color: #f0f0f0; }
+.hero .credit { position: absolute; right: 16px; top: 12px; background: rgb(0 0 0 / .55); padding: 2px 8px; border-radius: 4px; font: 13px var(--ui); color: #ddd; z-index: 1; }
+
+.start { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: -36px auto 48px; position: relative; z-index: 2; }
+.step { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; box-shadow: 0 10px 30px rgb(0 0 0 / .08); font-family: var(--ui); }
+.step .k { font: 700 13px var(--font); letter-spacing: .12em; text-transform: uppercase; color: var(--red-text); }
+.step h2 { font-size: 22px; margin: 6px 0 6px; }
+.step p { margin: 0 0 10px; color: var(--muted); font-size: 16px; }
+.step.meeting { border: 2px solid var(--red); }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 56px; }
+.split h2 { font-size: 32px; margin-top: 0; }
+.sig { font-family: var(--ui); font-size: 16px; color: var(--muted); }
+.mosaic { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; gap: 8px; }
+.mosaic img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: block; }
+.mosaic img:first-child { grid-row: span 2; }
+
+.year { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 40px 0; margin-bottom: 48px; font-family: var(--ui); }
+.year h2 { margin-top: 0; }
+.year ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; counter-reset: e; }
+.year li { padding: 16px 12px 0 0; border-top: 3px solid var(--line); position: relative; font-weight: 600; font-size: 15px; }
+.year li::before { content: ""; position: absolute; top: -9px; left: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--red); }
+.net { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; background: var(--red-soft); border-radius: 16px; padding: 20px 24px; margin-bottom: 56px; font-family: var(--ui); }
+.net b { font-variant-numeric: tabular-nums; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font: 15px var(--ui); color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+footer a { margin-right: 18px; }
+
+@media (max-width: 900px) {
+  nav.main { display: none; }
+  .menu { display: block; margin-left: auto; }
+  .menu[open] nav.main { display: block; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .menu[open] nav.main ul { flex-direction: column; padding: 8px 16px 16px; }
+  header .wrap { position: relative; }
+  .start, .split { grid-template-columns: 1fr; }
+  .start { margin-top: 16px; }
+  .year ol { grid-template-columns: 1fr 1fr; row-gap: 20px; }
+  .hero { min-height: 380px; }
+}
+
+.mt { max-width: 72ch; padding: 24px 0 56px; }
+.mt-crumbs { font-size: 14px; margin: 0 0 8px; }
+.mt h1 { margin: 0 0 20px; }
+.mt h2 { margin: 40px 0 12px; }
+.mt h3 { margin: 22px 0 6px; }
+.mt-facts { padding: 20px 22px; margin-bottom: 8px; }
+.mt-facts p { margin: 0; }
+.mt-topic { margin: 4px 0 12px !important; }
+.mt-facts dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 0 0 16px; }
+.mt-facts dd { margin: 0; font-weight: 600; }
+.mt-zoom { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.mt-zoom span { font-size: 15px; }
+.mt-prizes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; list-style: none; padding: 0; margin: 12px 0 0; }
+.mt-prizes li { padding: 10px; font-size: 14px; line-height: 1.4; }
+.mt-prizes img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #fff; display: block; margin-bottom: 8px; }
+.mt-prizes b { display: block; }
+.mt-where { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.mt-where > div { padding: 14px 18px; }
+.mt-where h3 { margin-top: 0; }
+.mt-where p { margin: 0; }
+.mt-past { list-style: none; padding: 0; margin: 0; }
+.mt-past li { display: grid; grid-template-columns: 90px 1fr; gap: 12px; padding: 10px 0; }
+.mt-who { display: block; font-size: 15px; }
+.mt-tag { font-size: 12px; font-weight: 700; padding: 1px 8px; white-space: nowrap; }
+@media (max-width: 640px) {
+  .mt-prizes { grid-template-columns: 1fr 1fr; }
+  .mt-where { grid-template-columns: 1fr; }
+  .mt-past li { grid-template-columns: 1fr; gap: 0; }
+  .mt-facts { padding: 16px; }
+}
+
+main > .wrap { padding-top: 8px; }
+.mt h1 { font-size: clamp(32px, 5vw, 48px); }
+.mt h2 { font-size: 28px; }
+.mt-crumbs { font-family: var(--ui); color: var(--muted); }
+.mt-crumbs a { color: var(--muted); }
+.mt-facts { background: var(--card); border: 2px solid var(--red); border-radius: 16px; box-shadow: 0 10px 30px rgb(0 0 0 / .08); font-family: var(--ui); }
+.mt-label { font: 700 13px var(--font); letter-spacing: .12em; text-transform: uppercase; color: var(--red-text); }
+.mt-topic { font: 700 24px/1.2 var(--font); color: var(--head); }
+.mt-facts dt, .mt-zoom span, .mt-who, .mt-when { color: var(--muted); }
+.mt-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 20px; border-radius: 999px; background: var(--red); color: #fff; font-weight: 600; text-decoration: none; }
+.mt-prizes li, .mt-where > div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; font-family: var(--ui); }
+.mt-prizes img { border-radius: 8px; }
+.mt-prizes b { color: var(--red-text); }
+.mt-past { font-family: var(--ui); font-size: 16px; }
+.mt-past li { border-bottom: 1px solid var(--line); }
+.mt-tag { background: var(--red-soft); color: var(--red-text); border-radius: 999px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap">
+  <a class="brand" href="c-community.html"><img src="paara-logo.svg" alt="">PAARA</a>
+  <nav class="main" aria-label="Main navigation"><ul>
+    <li><a href="#">About</a></li><li><a href="c-meeting.html" aria-current="page">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+    <li><a href="#">New Hams</a></li><li><a href="#">Resources</a></li><li><a class="join" href="#">Membership</a></li>
+  </ul></nav>
+  <details class="menu"><summary>Menu</summary><nav class="main" aria-label="Main navigation (mobile)"><ul>
+    <li><a href="#">About</a></li><li><a href="c-meeting.html">Meetings</a></li><li><a href="#">Events</a></li><li><a href="#">On the Air</a></li>
+    <li><a href="#">New Hams</a></li><li><a href="#">Resources</a></li><li><a href="#">Membership</a></li>
+  </ul></nav></details>
+  <button class="theme" type="button" aria-pressed="false">Dark mode</button>
+</div></header>
+
+<main id="main">
+<div class="wrap">
+<article class="mt">
+  <p class="mt-crumbs"><a href="c-community.html">Home</a> › <a href="c-meeting.html">Meetings</a> › November 2026</p>
+  <h1>November Monthly Meeting</h1>
+  <div class="mt-facts">
+    <p class="mt-label">Friday, 6 November 2026</p>
+    <p class="mt-topic">Scalable Phased Arrays with QuadRF</p>
+    <dl><dt>Time</dt><dd>7:00 PM Pacific Time</dd><dt>Presenter</dt><dd>Roy Gross KM6EOO</dd></dl>
+    <p class="mt-zoom"><a class="mt-btn" href="#">Join on Zoom</a> <span>or dial +1 669 900 6833, meeting ID 821 4344 5051</span></p>
+  </div>
+
+  <h2 id="details">Details</h2>
+  <p>Phased arrays are a core technology for RF professionals: direction finding, beamforming, interferometry, imaging, and MIMO are essentials of modern wireless engineering. Until now, these capabilities have been prohibitively expensive for radio amateurs. Learn how the QuadRF—a low-cost, open-source, and highly scalable phased array SDR—brings spatial wireless exploration to amateur radio. We will break down the radio's unique Raspberry Pi-based architecture, discuss clever DSP techniques, and explore its many applications. See the QuadRF live in action as a real-time AR radio camera, and discover its potential for mesh networks, data links, sensing, and even a 240-element array for moonbounce.</p>
+  <p>Roy is an undergrad studying electrical engineering at UC Santa Barbara, and building phased arrays with ScaleRF. He attended his first PAARA meeting in fifth grade, and got his ticket, and callsign KM6EOO, soon after. Roy enjoys homebrewing antennas and radios, with particular interest in SDRs and phased arrays. He also enjoys biking and hiking to operate HF portable.</p>
+
+  <h2 id="raffle">Raffle</h2>
+  <ul class="mt-prizes">
+    <li><img src="img/raffle-202611-1.jpg" alt="Bioenno Power 12V 12Ah LiFePO4 battery"><b>1st prize</b>Bioenno Power 12V 12Ah LiFePO4 Battery</li>
+    <li><img src="img/raffle-202611-2.jpg" alt="Surecom SW-102 power and SWR meter"><b>2nd prize</b>Surecom SW-102 125-525Mhz Power &amp; SWR Meter</li>
+    <li><img src="img/raffle-202611-3.jpg" alt="TIDRADIO TD-H3 handheld radio"><b>3rd prize</b>TIDRADIO TD-H3 Multi-Band Ham Radio</li>
+    <li><img src="img/raffle-202611-4.jpg" alt="Endoscope camera"><b>4th prize</b>Endoscope Camera</li>
+    <li><img src="img/raffle-202611-5.jpg" alt="Anker Prime USB C cable"><b>5th prize</b>Anker Prime USB C to USB C Cable, 240W (3 ft)</li>
+  </ul>
+
+  <h2 id="about">About club meetings</h2>
+  <p>The Palo Alto Amateur Radio Association meets on the 1st Friday of the month at 7:00 pm (except when the first Friday lands on a holiday, when it typically moves to the 2nd Friday).</p>
+  <div class="mt-where">
+    <div><h3>Where</h3><p>Room H6, Cubberley Community Center<br>4000 Middlefield Road, Palo Alto, CA 94303<br>(650) 329-2418</p></div>
+    <div><h3>After the meeting</h3><p>Many members gather for beer, pizza, and eyeball QSO at Round Table Pizza, <a href="#">702 Colorado Ave in Palo Alto</a>.</p></div>
+  </div>
+  <h3>Board meetings</h3>
+  <p>The PAARA Board meets on the 3rd Wednesday of every month at 7:00 pm by video conference. Any PAARA member is welcome to attend.</p>
+  <h3>Recordings</h3>
+  <p>Monthly presentations since 2021 are on each meeting's page and on our <a href="#">YouTube channel</a>.</p>
+
+  <h2 id="past">Past meetings</h2>
+  <ul class="mt-past">
+    <li><span class="mt-when">Oct 2026</span><span><a href="#">All-Year DX Contest</a> <span class="mt-tag">Video</span></span></li>
+    <li><span class="mt-when">Sep 2026</span><span><a href="#">Radio Direction Finding - History and Techniques</a> <span class="mt-tag">Video</span><span class="mt-who">Benjamin Friedlander AD6JA</span></span></li>
+    <li><span class="mt-when">Aug 2026</span><span><a href="#">Antenna design, efficiency, and portability</a> <span class="mt-tag">Video</span><span class="mt-who">Greg Mihran, KJ6ER</span></span></li>
+    <li><span class="mt-when">Jul 2026</span><span><a href="#">Multiple Topics</a> <span class="mt-tag">Video</span><span class="mt-who">Justin, AI6YM; Ben, KN6UBF; Connie, W6EFI</span></span></li>
+    <li><span class="mt-when">Jun 2026</span><span><a href="#">The California Historical Radio Society: Preserving the Foundations of Modern Communication</a> <span class="mt-tag">Video</span><span class="mt-who">Rachel Lee</span></span></li>
+  </ul>
+  <p><a href="#">All past meetings, 2010 to date</a></p>
+</article>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div>© 1937–2026 Palo Alto Amateur Radio Association</div>
+  <div><a href="#">Contact us</a><a href="#">Loan program</a><a href="#">Donate</a></div>
+</div></footer>
+<script>
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{const d=document.documentElement.dataset.theme==="dark";b.setAttribute("aria-pressed",d);};set();
+b.addEventListener("click",()=>{const r=document.documentElement;if(r.dataset.theme==="dark"){delete r.dataset.theme;try{localStorage.setItem("mock-theme","light")}catch(e){}}else{r.dataset.theme="dark";try{localStorage.setItem("mock-theme","dark")}catch(e){}}set();});});
+</script>
+</body>
+</html>
