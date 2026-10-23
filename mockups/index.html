@@ -3,38 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <title>PAARA design mockups</title>
 <style>
-:root { --bg: #fff; --ink: #1a1a1a; --muted: #555; --line: #ddd; --link: #b51d23; }
-@media (prefers-color-scheme: dark) { :root { --bg: #141414; --ink: #eee; --muted: #aaa; --line: #333; --link: #ff7b80; } }
+:root { --bg: #fff; --ink: #1a1a1a; --muted: #555; --line: #ddd; --link: #b51d23; --tag: #f3f3f1; }
+@media (prefers-color-scheme: dark) { :root { --bg: #141414; --ink: #eee; --muted: #aaa; --line: #333; --link: #ff7b80; --tag: #222; } }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.5 system-ui, sans-serif; }
-main { max-width: 760px; margin: 0 auto; padding: 32px 16px; }
-h1 { margin: 0 0 4px; } p { color: var(--muted); }
-ol { padding: 0; list-style: none; }
-li { border-top: 1px solid var(--line); padding: 14px 0; }
-a { color: var(--link); font-weight: 700; font-size: 20px; }
-span { display: block; color: var(--muted); }
+main { max-width: 820px; margin: 0 auto; padding: 32px 16px 48px; }
+h1 { margin: 0 0 4px; } h2 { margin: 36px 0 4px; font-size: 24px; }
+p { color: var(--muted); margin: 6px 0; }
+.draft { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--link); border: 2px solid var(--link); padding: 0 8px; vertical-align: middle; margin-left: 8px; }
+ol { padding: 0; list-style: none; margin: 8px 0 0; }
+li { border-top: 1px solid var(--line); padding: 12px 0; }
+li > a, li > b { font-weight: 700; font-size: 20px; }
+a { color: var(--link); }
+.sub { display: block; color: var(--muted); }
+.pair a { font-weight: 600; font-size: 17px; margin-right: 14px; display: inline-block; padding: 4px 0; }
+.note { background: var(--tag); border-radius: 8px; padding: 12px 16px; margin-top: 16px; color: var(--ink); }
 </style>
 </head>
 <body>
 <main>
-<h1>PAARA design mockups</h1>
-<p>Home-page directions for paara.org. Each has a light/dark toggle and works at phone width.</p>
+<h1>PAARA design mockups <span class="draft">Draft</span></h1>
+<p>Narrowing the choice for paara.org to two decisions. Each mockup has a light/dark toggle and works at phone width.</p>
+
+<h2>1. Inside pages</h2>
+<p>Most of the site is long pages: meetings, Field Day, repeaters, bylaws. This style covers all of them, so it is the main decision. Each choice is shown as a home page and the November meeting page.</p>
 <ol>
-  <li><a href="http://localhost:4000/">Current site</a><span>The Architect theme in use today.</span></li>
-  <li><a href="m-refresh.html">M: Refresh</a><span>Today's layout and links, with better type and spacing.</span></li>
-  <li><a href="a-clean.html">A: Clean club</a><span>White, red accent, top menu, meeting card.</span></li>
-  <li><a href="b-bolt.html">B: Bolt</a><span>Black band and red bolt from the logo.</span></li>
-  <li><a href="c-community.html">C: Community</a><span>Photo-led and warm.</span></li>
-  <li><a href="d-qsl.html">D: QSL card</a><span>QSL cards, log sheets and rubber stamps.</span></li>
-  <li><a href="e-newsletter.html">E: Newsletter</a><span>Editorial layout in the spirit of PAARAgraphs.</span></li>
-  <li><a href="f-signal.html">F: Signal</a><span>Waterfall display, at-a-glance info, repeater table.</span></li>
-  <li><a href="g-plain.html">G: Plain &amp; practical</a><span>Large, legible text and an "I want to…" task list.</span></li>
-  <li><a href="h-swiss.html">H: Swiss poster</a><span>Strict grid, huge type, PAARA in Morse.</span></li>
-  <li><a href="i-dial.html">I: 1937 radio dial</a><span>Art Deco cabinet with a dial tuned to the net.</span></li>
-  <li><a href="j-map.html">J: Bay Area map</a><span>Where we meet, operate Field Day, and run repeaters.</span></li>
-  <li><a href="k-agenda.html">K: Agenda</a><span>Calendar-first: what's on this month.</span></li>
-  <li><a href="l-bbs.html">L: Packet BBS</a><span>Terminal screen with menu commands; amber at night.</span></li>
+  <li><b>A: Clean club</b><span class="sub">White, red accent, seven-item top menu.</span>
+    <span class="pair"><a href="a-clean.html">Home page</a><a href="a-meeting.html">Meeting page</a></span></li>
+  <li><b>M: Refresh</b><span class="sub">Today's layout and sidebar links, with better type and spacing. The least change.</span>
+    <span class="pair"><a href="m-refresh.html">Home page</a><a href="m-meeting.html">Meeting page</a></span></li>
+</ol>
+
+<h2>2. Front page</h2>
+<p>The home page can match the inside pages, or be a themed front door that leads into them. A themed front page is a second design to maintain, and has to look like it belongs with the inside pages.</p>
+<ol>
+  <li><b>Match the inside pages</b><span class="sub">A's or M's own home page, above.</span></li>
+  <li><a href="d-qsl.html">D: QSL card</a><span class="sub">QSL cards, log sheets and rubber stamps.</span></li>
+  <li><a href="f-signal.html">F: Signal</a><span class="sub">Waterfall display, at-a-glance info, repeater table.</span></li>
+  <li><a href="h-swiss.html">H: Swiss poster</a><span class="sub">Strict grid, huge type, PAARA in Morse.</span></li>
+  <li><a href="i-dial.html">I: 1937 radio dial</a><span class="sub">Art Deco cabinet with a dial tuned to the net.</span></li>
+  <li><a href="j-map.html">J: Bay Area map</a><span class="sub">Where we meet, operate Field Day, and run repeaters.</span></li>
+  <li><a href="k-agenda.html">K: Agenda</a><span class="sub">Calendar-first: what's on this month.</span></li>
+  <li><a href="l-bbs.html">L: Packet BBS</a><span class="sub">Terminal screen with menu commands; amber at night.</span></li>
+</ol>
+<p class="note">On these mockups, the themed front pages' Meetings links open the A meeting page, to show how a themed front leads into plain inside pages.</p>
+
+<h2>Ideas to borrow</h2>
+<p>These first-round options are close enough to A that their best parts could be folded into it.</p>
+<ol>
+  <li><a href="b-bolt.html">B: Bolt</a><span class="sub">The black band and red bolt from the logo.</span></li>
+  <li><a href="c-community.html">C: Community</a><span class="sub">A large club photo up front.</span></li>
+  <li><a href="e-newsletter.html">E: Newsletter</a><span class="sub">Editorial type in the spirit of PAARAgraphs.</span></li>
+  <li><a href="g-plain.html">G: Plain &amp; practical</a><span class="sub">Larger, more legible text and an "I want to…" list.</span></li>
+</ol>
+
+<h2>For comparison</h2>
+<ol>
+  <li><a href="https://paara.org/">Current site</a><span class="sub">The Architect theme in use today.</span></li>
+  <li><a href="https://charlieh0tel.github.io/paara-mockups/">First round</a><span class="sub">All thirteen options as first shown to the board.</span></li>
 </ol>
 </main>
 </body>

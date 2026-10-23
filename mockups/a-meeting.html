@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup A inside: November meeting | PAARA</title>
+<script>try{if(localStorage.getItem("mock-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+:root {
+  --red: #c41f26; --red-ink: #b51d23;
+  --bg: #ffffff; --surface: #f6f6f4; --line: #e2e2de;
+  --text: #1c1c1c; --muted: #555; --head: #0d0d0d;
+  --link: #b51d23; --card: #fff; --footer: #111; --footer-text: #e8e8e8;
+  --font: Futura, "Futura PT", Jost, "Century Gothic", "Avenir Next", system-ui, sans-serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html[data-theme="dark"] {
+  --red: #d2232a; --red-ink: #ff6b70;
+  --bg: #141414; --surface: #1c1c1c; --line: #2e2e2e;
+  --text: #e6e6e6; --muted: #a8a8a8; --head: #fff;
+  --link: #ff7b80; --card: #1f1f1f; --footer: #0a0a0a; --footer-text: #cfcfcf;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 var(--body); }
+a { color: var(--link); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font); color: var(--head); line-height: 1.2; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--bg); padding: 8px; z-index: 9; }
+
+.netbar { background: var(--surface); border-bottom: 1px solid var(--line); font-size: 14px; }
+.netbar .wrap { display: flex; justify-content: space-between; gap: 12px; padding-top: 6px; padding-bottom: 6px; flex-wrap: wrap; }
+.netbar b { font-variant-numeric: tabular-nums; }
+.theme { font: inherit; background: none; border: 1px solid var(--line); color: var(--text); border-radius: 999px; padding: 2px 12px; cursor: pointer; }
+
+header { border-bottom: 3px solid var(--red); }
+header .wrap { display: flex; align-items: center; gap: 24px; padding-top: 12px; padding-bottom: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--head); }
+.brand img { width: 64px; height: 64px; }
+html[data-theme="dark"] .brand img { background: #fff; border-radius: 50%; }
+.brand strong { font-family: var(--font); font-size: 28px; letter-spacing: .06em; display: block; line-height: 1; }
+.brand span { font-size: 13px; color: var(--muted); }
+nav.main { margin-left: auto; }
+nav.main ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+nav.main a { display: block; padding: 10px 10px; white-space: nowrap; text-decoration: none; color: var(--head); font-family: var(--font); font-weight: 600; border-radius: 6px; }
+nav.main a:hover, nav.main a[aria-current] { background: var(--surface); color: var(--red-ink); }
+.menu { display: none; margin-left: auto; }
+.menu summary { list-style: none; cursor: pointer; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-family: var(--font); }
+.menu summary::-webkit-details-marker { display: none; }
+
+/* Inner page */
+.crumbs { font-size: 14px; color: var(--muted); padding: 20px 0 0; }
+.crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.crumbs li + li::before { content: "›"; margin-right: 6px; }
+.page { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 48px; padding: 8px 0 56px; }
+article { max-width: 72ch; }
+article h1 { font-size: clamp(30px, 4.5vw, 44px); margin: 8px 0 20px; }
+article h2 { font-size: 26px; margin: 40px 0 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+article h3 { font-size: 20px; margin: 24px 0 8px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 24px; }
+.facts { border-top: 6px solid var(--red); box-shadow: 0 6px 24px rgb(0 0 0 / .06); }
+.facts .label { font-family: var(--font); text-transform: uppercase; letter-spacing: .1em; font-size: 13px; color: var(--red-ink); font-weight: 700; }
+.facts .topic { font: 600 24px/1.25 var(--font); color: var(--head); margin: 6px 0 12px; }
+.facts dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 0 0 16px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; font-weight: 600; }
+.btns { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn { display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-family: var(--font); font-weight: 600; min-height: 44px; }
+.btn.primary { background: var(--red); color: #fff; }
+.btns span { color: var(--muted); font-size: 15px; }
+.prizes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; list-style: none; padding: 0; margin: 12px 0 0; }
+.prizes li { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 10px; font-size: 14px; }
+.prizes img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #fff; border-radius: 4px; display: block; margin-bottom: 8px; }
+.prizes b { display: block; font-family: var(--font); color: var(--red-ink); }
+.where { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.where h3 { margin-top: 0; }
+.where p { margin: 0 0 8px; }
+.past { list-style: none; padding: 0; margin: 0; }
+.past li { display: grid; grid-template-columns: 90px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.past .when { color: var(--muted); font-variant-numeric: tabular-nums; }
+.past .who { display: block; color: var(--muted); font-size: 15px; }
+.tag { display: inline-block; font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--text); margin-left: 6px; vertical-align: 2px; }
+
+aside.toc { position: sticky; top: 16px; align-self: start; margin-top: 64px; font-size: 15px; }
+aside.toc h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 8px; }
+aside.toc ul { list-style: none; margin: 0 0 24px; padding: 0; border-left: 2px solid var(--line); }
+aside.toc a { display: block; padding: 5px 12px; color: var(--text); text-decoration: none; }
+aside.toc a:hover { color: var(--red-ink); }
+aside.toc a[aria-current] { color: var(--red-ink); font-weight: 600; box-shadow: -2px 0 0 var(--red); }
+
+footer { background: var(--footer); color: var(--footer-text); padding: 32px 0; font-size: 15px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+footer a { color: #fff; }
+footer ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 20px; flex-wrap: wrap; }
+
+@media (max-width: 1040px) {
+  nav.main { display: none; }
+  .menu { display: block; }
+  .menu[open] nav.main { display: block; position: absolute; left: 0; right: 0; top: 100%; background: var(--bg); border-bottom: 3px solid var(--red); z-index: 5; }
+  .menu[open] nav.main ul { flex-direction: column; padding: 8px 16px 16px; }
+  header .wrap { position: relative; }
+  .brand img { width: 48px; height: 48px; }
+  .brand span { display: none; }
+  .page { grid-template-columns: 1fr; gap: 0; }
+  aside.toc { display: none; }
+}
+@media (max-width: 640px) {
+  .prizes { grid-template-columns: 1fr 1fr; }
+  .where { grid-template-columns: 1fr; }
+  .past li { grid-template-columns: 1fr; gap: 0; }
+  .card { padding: 18px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="netbar"><div class="wrap">
+  <span><a href="#">Weekly net</a> every Monday 8:30 PM on <b>N6NFI 145.230 MHz (−) 100 Hz</b></span>
+  <button class="theme" type="button" aria-pressed="false">Dark mode</button>
+</div></div>
+
+<header><div class="wrap">
+  <a class="brand" href="a-clean.html"><img src="paara-logo.svg" alt="PAARA logo"><div><strong>PAARA</strong><span>Palo Alto Amateur Radio Association</span></div></a>
+  <nav class="main" aria-label="Main navigation"><ul>
+    <li><a href="#">About</a></li><li><a href="a-meeting.html" aria-current="page">Meetings</a></li><li><a href="#">Events</a></li>
+    <li><a href="#">On the Air</a></li><li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+  </ul></nav>
+  <details class="menu"><summary>Menu</summary><nav class="main" aria-label="Main navigation (mobile)"><ul>
+    <li><a href="#">About</a></li><li><a href="a-meeting.html">Meetings</a></li><li><a href="#">Events</a></li>
+    <li><a href="#">On the Air</a></li><li><a href="#">New Hams</a></li><li><a href="#">Membership</a></li><li><a href="#">Resources</a></li>
+  </ul></nav></details>
+</div></header>
+
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="a-clean.html">Home</a></li><li><a href="a-meeting.html">Meetings</a></li><li aria-current="page">November 2026</li></ol></nav>
+<div class="page">
+<main id="main">
+<article>
+  <h1>November Monthly Meeting</h1>
+  <div class="card facts">
+    <div class="label">Friday, 6 November 2026</div>
+    <p class="topic">Scalable Phased Arrays with QuadRF</p>
+    <dl><dt>Time</dt><dd>7:00 PM Pacific Time</dd><dt>Presenter</dt><dd>Roy Gross KM6EOO</dd></dl>
+    <div class="btns"><a class="btn primary" href="#">Join on Zoom</a><span>or dial +1 669 900 6833, meeting ID 821 4344 5051</span></div>
+  </div>
+
+  <h2 id="details">Details</h2>
+  <p>Phased arrays are a core technology for RF professionals: direction finding, beamforming, interferometry, imaging, and MIMO are essentials of modern wireless engineering. Until now, these capabilities have been prohibitively expensive for radio amateurs. Learn how the QuadRF—a low-cost, open-source, and highly scalable phased array SDR—brings spatial wireless exploration to amateur radio. We will break down the radio's unique Raspberry Pi-based architecture, discuss clever DSP techniques, and explore its many applications. See the QuadRF live in action as a real-time AR radio camera, and discover its potential for mesh networks, data links, sensing, and even a 240-element array for moonbounce.</p>
+  <p>Roy is an undergrad studying electrical engineering at UC Santa Barbara, and building phased arrays with ScaleRF. He attended his first PAARA meeting in fifth grade, and got his ticket, and callsign KM6EOO, soon after. Roy enjoys homebrewing antennas and radios, with particular interest in SDRs and phased arrays. He also enjoys biking and hiking to operate HF portable.</p>
+
+  <h2 id="raffle">Raffle</h2>
+  <ul class="prizes">
+    <li><img src="img/raffle-202611-1.jpg" alt="Bioenno Power 12V 12Ah LiFePO4 battery"><b>1st prize</b>Bioenno Power 12V 12Ah LiFePO4 Battery</li>
+    <li><img src="img/raffle-202611-2.jpg" alt="Surecom SW-102 power and SWR meter"><b>2nd prize</b>Surecom SW-102 125-525Mhz Power &amp; SWR Meter</li>
+    <li><img src="img/raffle-202611-3.jpg" alt="TIDRADIO TD-H3 handheld radio"><b>3rd prize</b>TIDRADIO TD-H3 Multi-Band Ham Radio</li>
+    <li><img src="img/raffle-202611-4.jpg" alt="Endoscope camera"><b>4th prize</b>Endoscope Camera</li>
+    <li><img src="img/raffle-202611-5.jpg" alt="Anker Prime USB C cable"><b>5th prize</b>Anker Prime USB C to USB C Cable, 240W (3 ft)</li>
+  </ul>
+
+  <h2 id="about">About club meetings</h2>
+  <p>The Palo Alto Amateur Radio Association meets on the 1st Friday of the month at 7:00 pm (except when the first Friday lands on a holiday, when it typically moves to the 2nd Friday).</p>
+  <div class="where">
+    <div class="card"><h3>Where</h3><p>Room H6, Cubberley Community Center<br>4000 Middlefield Road, Palo Alto, CA 94303</p><p>(650) 329-2418</p></div>
+    <div class="card"><h3>After the meeting</h3><p>Many members gather for beer, pizza, and eyeball QSO at Round Table Pizza, <a href="#">702 Colorado Ave in Palo Alto</a>.</p></div>
+  </div>
+  <h3>Board meetings</h3>
+  <p>The PAARA Board meets on the 3rd Wednesday of every month at 7:00 pm by video conference. Any PAARA member is welcome to attend.</p>
+  <h3>Recordings</h3>
+  <p>Monthly presentations since 2021 are on each meeting's page and on our <a href="#">YouTube channel</a>.</p>
+
+  <h2 id="past">Past meetings</h2>
+  <ul class="past">
+    <li><span class="when">Oct 2026</span><span><a href="#">All-Year DX Contest</a><span class="tag">Video</span></span></li>
+    <li><span class="when">Sep 2026</span><span><a href="#">Radio Direction Finding - History and Techniques</a><span class="tag">Video</span><span class="who">Benjamin Friedlander AD6JA</span></span></li>
+    <li><span class="when">Aug 2026</span><span><a href="#">Antenna design, efficiency, and portability</a><span class="tag">Video</span><span class="who">Greg Mihran, KJ6ER</span></span></li>
+    <li><span class="when">Jul 2026</span><span><a href="#">Multiple Topics</a><span class="tag">Video</span><span class="who">Justin, AI6YM; Ben, KN6UBF; Connie, W6EFI</span></span></li>
+    <li><span class="when">Jun 2026</span><span><a href="#">The California Historical Radio Society: Preserving the Foundations of Modern Communication</a><span class="tag">Video</span><span class="who">Rachel Lee</span></span></li>
+  </ul>
+  <p><a href="#">All past meetings, 2010 to date</a></p>
+</article>
+</main>
+<aside class="toc" aria-label="On this page">
+  <h2>On this page</h2>
+  <ul><li><a href="#details">Details</a></li><li><a href="#raffle">Raffle</a></li><li><a href="#about">About club meetings</a></li><li><a href="#past">Past meetings</a></li></ul>
+  <h2>Meetings</h2>
+  <ul><li><a href="a-meeting.html" aria-current="page">Next meeting</a></li><li><a href="#">Past meetings</a></li><li><a href="#">Zoom tips</a></li></ul>
+</aside>
+</div>
+</div>
+
+<footer><div class="wrap">
+  <div>© 1937–2026 Palo Alto Amateur Radio Association</div>
+  <ul><li><a href="#">Contact us</a></li><li><a href="#">Loan program</a></li><li><a href="#">Donate</a></li></ul>
+</div></footer>
+<script>
+document.querySelectorAll(".theme").forEach(b=>{const set=()=>{const d=document.documentElement.dataset.theme==="dark";b.setAttribute("aria-pressed",d);};set();
+b.addEventListener("click",()=>{const r=document.documentElement;if(r.dataset.theme==="dark"){delete r.dataset.theme;try{localStorage.setItem("mock-theme","light")}catch(e){}}else{r.dataset.theme="dark";try{localStorage.setItem("mock-theme","dark")}catch(e){}}set();});});
+</script>
+</body>
+</html>
